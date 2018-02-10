@@ -35,7 +35,7 @@ import net.minecraftforge.fml.relauncher.Side;
  * that, other interesting leveling systems are planned to enhance the
  * overall feel of Minecraft, while sticking to a primarily vanilla feel.
  */
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, updateJSON = Reference.UPDATE_URL)
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Levels 
 {
 	@SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.COMMON)
