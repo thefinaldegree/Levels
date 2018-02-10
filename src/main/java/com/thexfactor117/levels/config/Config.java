@@ -28,10 +28,10 @@ public class Config
 	public static boolean enemyLeveling = true;
 	
 	// experience
-	public static int maxLevel = 7;
+	public static int maxLevel = 10;
 	public static int level1Exp = 50;
 	public static double expExponent = 2.4F;
-	public static int expMultiplier = 20;
+	public static int expMultiplier = 31;
 	
 	// misc
 	public static boolean showDurability = true;
