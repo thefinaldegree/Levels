@@ -117,7 +117,7 @@ public class Config
 		 * Experience
 		 */
 		prop = main.get(category, "maxLevel", maxLevel);
-		prop.setComment("Sets the maximum level cap for weapons and armor. Default: 7");
+		prop.setComment("Sets the maximum level cap for weapons and armor. Default: 10");
 		maxLevel = prop.getInt();
 		propOrder.add(prop.getName());
 		
@@ -132,7 +132,7 @@ public class Config
 		propOrder.add(prop.getName());
 		
 		prop = main.get(category, "experienceMultiplier", expMultiplier);
-		prop.setComment("Sets the multiplier of the experience algorithm: Default: 20");
+		prop.setComment("Sets the multiplier of the experience algorithm: Default: 31");
 		expMultiplier = prop.getInt();
 		propOrder.add(prop.getName());
 		
