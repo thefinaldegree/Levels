@@ -235,14 +235,12 @@ public class EventLivingHurt
 				default:
 					break;
 			}
-			Levels.LOGGER.info("Amount: " + event.getAmount());
 			
 			if (stack.getItem() instanceof ItemSword || stack.getItem() instanceof ItemAxe)
 				event.setAmount((float) (event.getAmount() * damageMultiplier));
 			else if (stack.getItem() instanceof ItemArmor)
 				event.setAmount((float) (event.getAmount() / damageMultiplier));
 			
-			Levels.LOGGER.info("Amount After: " + event.getAmount());
 		}
 	}
 	
