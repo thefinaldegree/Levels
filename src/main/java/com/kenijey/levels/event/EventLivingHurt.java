@@ -3,7 +3,6 @@ package com.kenijey.levels.event;
 import java.util.Iterator;
 import java.util.List;
 
-import com.kenijey.levels.Levels;
 import com.kenijey.levels.config.Config;
 import com.kenijey.levels.leveling.Ability;
 import com.kenijey.levels.leveling.Experience;
@@ -60,6 +59,18 @@ public class EventLivingHurt
 					updateLevel(player, stack, nbt);
 				}
 			}
+			else if (stack != null && stack.getItem() instanceof ItemBow)
+			{
+				NBTTagCompound nbt = NBTHelper.loadStackNBT(stack);
+				
+				if (nbt != null)
+				{
+					updateExperience(nbt);
+					useRarity(event, stack, nbt);
+					useWeaponAbilities(event, player, enemy, nbt);
+					updateLevel(player, stack, nbt);
+				}
+			}
 		}
 		else if (event.getSource().getTrueSource() instanceof EntityLivingBase && event.getEntityLiving() instanceof EntityPlayer)
 		{
@@ -89,26 +100,7 @@ public class EventLivingHurt
 		{
 			EntityArrow arrow = (EntityArrow) event.getSource().getTrueSource();
 			
-			if (arrow.shootingEntity instanceof EntityPlayer)
-			{
-				EntityPlayer player = (EntityPlayer) arrow.shootingEntity;
-				EntityLivingBase enemy = event.getEntityLiving();
-				ItemStack stack = player.inventory.getCurrentItem();
-				
-				if (stack != null && stack.getItem() instanceof ItemBow)
-				{
-					NBTTagCompound nbt = NBTHelper.loadStackNBT(stack);
-					
-					if (nbt != null)
-					{
-						updateExperience(nbt);
-						useRarity(event, stack, nbt);
-						useWeaponAbilities(event, player, enemy, nbt);
-						updateLevel(player, stack, nbt);
-					}
-				}
-			}
-			else if (arrow.shootingEntity instanceof EntityLivingBase && event.getEntityLiving() instanceof EntityPlayer)
+			if (arrow.shootingEntity instanceof EntityLivingBase && event.getEntityLiving() instanceof EntityPlayer)
 			{
 				EntityLivingBase enemy = (EntityLivingBase) arrow.shootingEntity;
 				EntityPlayer player = (EntityPlayer) event.getEntityLiving();
@@ -230,7 +222,7 @@ public class EventLivingHurt
 					break;
 			}
 			
-			if (stack.getItem() instanceof ItemSword || stack.getItem() instanceof ItemAxe)
+			if (stack.getItem() instanceof ItemSword || stack.getItem() instanceof ItemAxe || stack.getItem() instanceof ItemBow)
 				event.setAmount((float) (event.getAmount() * damageMultiplier));
 			else if (stack.getItem() instanceof ItemArmor)
 				event.setAmount((float) (event.getAmount() / damageMultiplier));

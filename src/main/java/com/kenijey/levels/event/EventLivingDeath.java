@@ -10,6 +10,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
@@ -44,6 +45,19 @@ public class EventLivingDeath
 					addBonusExperience(event, nbt);
 					updateLevel(player, stack, nbt);
 					NBTHelper.saveStackNBT(stack, nbt);
+				}
+			}
+			else if (stack != null && stack.getItem() instanceof ItemBow)
+			{
+				if (stack != null)
+				{
+					NBTTagCompound nbt = NBTHelper.loadStackNBT(stack);
+					
+					if (nbt != null)
+					{
+						addBonusExperience(event, nbt);
+						updateLevel(player, stack, nbt);
+					}
 				}
 			}
 		}
