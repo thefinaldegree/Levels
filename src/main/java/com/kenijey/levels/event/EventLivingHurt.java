@@ -163,7 +163,6 @@ public class EventLivingHurt
 		
 		if (rarity != Rarity.DEFAULT)
 		{
-			int var; // damage multiplier chance
 			int var1; // bonus experience chance
 			int var2; // bonus experience amount
 			int var3; // durability mitigation chance
@@ -174,10 +173,9 @@ public class EventLivingHurt
 			{
 				// 5% chance of dealing 1.25x damage and 5% chance of gaining additional points of experience
 				case UNCOMMON:
-					var = (int) (Math.random() * 20);
 					var1 = (int) (Math.random() * 20);
 					var2 = (int) (Math.random() * 1);
-					if (var == 0) damageMultiplier = Config.uncommonDamage;
+					damageMultiplier = Config.uncommonDamage;
 					if (var1 == 0) Experience.setExperience(nbt, Experience.getExperience(nbt) + var2);
 					// durability
 					var3 = (int) (Math.random() * 20);
@@ -186,10 +184,9 @@ public class EventLivingHurt
 					break;
 				// 7.7% chance of dealing 1.5x damage and 7.7% chance of gaining additional points of experience
 				case RARE:
-					var = (int) (Math.random() * 13);
 					var1 = (int) (Math.random() * 13);
 					var2 = (int) (Math.random() * 2);
-					if (var == 0) damageMultiplier = Config.rareDamage;
+					damageMultiplier = Config.rareDamage;
 					if (var1 == 0) Experience.setExperience(nbt, Experience.getExperience(nbt) + var2);
 					// durability
 					var3 = (int) (Math.random() * 13);
@@ -198,10 +195,9 @@ public class EventLivingHurt
 					break;
 				// 10% chance of dealing 2x damage and 10% chance of gaining additional points of experience
 				case ULTRA_RARE:
-					var = (int) (Math.random() * 10);
 					var1 = (int) (Math.random() * 10);
 					var2 = (int) (Math.random() * 3);
-					if (var == 0) damageMultiplier = Config.ultraRareDamage;
+					damageMultiplier = Config.ultraRareDamage;
 					if (var1 == 0) Experience.setExperience(nbt, Experience.getExperience(nbt) + var2);
 					// durability
 					var3 = (int) (Math.random() * 10);
@@ -210,10 +206,9 @@ public class EventLivingHurt
 					break;
 				// 14% chance of dealing 2.5x damage and 14% chance of gaining additional points of experience
 				case LEGENDARY:
-					var = (int) (Math.random() * 7);
 					var1 = (int) (Math.random() * 7);
 					var2 = (int) (Math.random() * 5);
-					if (var == 0) damageMultiplier = Config.legendaryDamage;
+					damageMultiplier = Config.legendaryDamage;
 					if (var1 == 0) Experience.setExperience(nbt, Experience.getExperience(nbt) + var2);
 					// durability
 					var3 = (int) (Math.random() * 7);
@@ -222,10 +217,9 @@ public class EventLivingHurt
 					break;
 				// 20% chance of dealing 3x damage and 20% chance of gaining additional points of experience
 				case ARCHAIC:
-					var = (int) (Math.random() * 5);
 					var1 = (int) (Math.random() * 5);
 					var2 = (int) (Math.random() * 10);
-					if (var == 0) damageMultiplier = Config.archaicDamage;
+					damageMultiplier = Config.archaicDamage;
 					if (var1 == 0) Experience.setExperience(nbt, Experience.getExperience(nbt) + var2);
 					// durability
 					var3 = (int) (Math.random() * 5);
