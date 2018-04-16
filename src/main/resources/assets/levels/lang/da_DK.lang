@@ -1,3 +1,5 @@
+key.levels=Weapon Levels
+
 levels.rarity.0=Standard
 levels.rarity.1=Basal
 levels.rarity.2=Ualmindelig
@@ -37,6 +39,6 @@ levels.misc.abilities.purchased=Købte Evner
 levels.misc.abilities.active=Aktiv
 levels.misc.abilities.passive=Passiv
 
-levels.update=Levels har nye tilgængelige versioner!
+levels.update=Weapon Levels har nye tilgængelige versioner!
 levels.login1=Tryk 'L' med noget udstyr for at komme i gang!
 levels.login2=(Du kan slå denne besked fra i config-filen)

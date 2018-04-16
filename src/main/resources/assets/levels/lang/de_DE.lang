@@ -1,3 +1,6 @@
+key.levels=Weapon Levels
+key.gui.weapon_interface=Weapon Level Key
+
 levels.rarity.0=Standard
 levels.rarity.1=Einfach
 levels.rarity.2=Ungewöhnlich
@@ -37,4 +40,4 @@ levels.misc.abilities.purchased=Gekaufte Fähigkeiten
 levels.misc.abilities.active=Aktiv
 levels.misc.abilities.passive=Passiv
 
-levels.update=Es ist eine neue Version von Levels verfügbar!
+levels.update=Es ist eine neue Version von Weapon Levels verfügbar!

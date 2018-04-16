@@ -85,7 +85,7 @@ public class Config
 	
 	public static void init(File dir)
 	{
-		main = new Configuration(new File(dir.getPath(), "levels.cfg"));
+		main = new Configuration(new File(dir.getPath(), "weaponlevels.cfg"));
 		abilities = new Configuration(new File(dir.getPath(), "abilities.cfg"));
 		rarities = new Configuration(new File(dir.getPath(), "rarities.cfg"));
 		
