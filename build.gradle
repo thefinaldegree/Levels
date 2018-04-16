@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = "2.0.3"
 group = "com.kenijey.levels" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "levels"
+archivesBaseName = "weaponlevels"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {

@@ -1,12 +1,12 @@
 [
 {
-  "modid": "levels",
-  "name": "Levels 2",
+  "modid": "weaponlevels",
+  "name": "Weapon Levels",
   "description": "An enhanced, unique leveling system.",
   "version": "2.0.3",
   "mcversion": "1.12",
-  "url": "https://github.com/TheXFactor117/Levels",
-  "updateUrl": "http://minecraft.curseforge.com/projects/levels/files",
+  "url": "https://github.com/kenijey/Levels",
+  "updateUrl": "https://minecraft.curseforge.com/projects/weaponlevels/files",
   "authorList": ["kenijey"],
   "credits": "TheXFactor117",
   "logoFile": "assets/levels/logo/logo.png",
