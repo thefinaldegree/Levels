@@ -69,7 +69,6 @@ public class EventLivingDeath
 			}
 		}
 	}
-	
 	/**
 	 * Called everytime an enemy dies. Adds bonus experience based on how much health the enemy had.
 	 * @param event
@@ -85,11 +84,11 @@ public class EventLivingDeath
 				IEnemyLevel enemyLevel = enemy.getCapability(CapabilityEnemyLevel.ENEMY_LEVEL_CAP, null);
 				int bonusExperience = 0;
 				
-				if (enemy.getMaxHealth() <= 10) bonusExperience = 0;
-				else if (enemy.getMaxHealth() > 10 && enemy.getMaxHealth() <= 25) bonusExperience = 1;
-				else if (enemy.getMaxHealth() > 25 && enemy.getMaxHealth() <= 40) bonusExperience = 2;
-				else if (enemy.getMaxHealth() > 40 && enemy.getMaxHealth() <= 75) bonusExperience = 3;
-				else if (enemy.getMaxHealth() > 75) bonusExperience = 4;
+				if (enemy.getMaxHealth() <= 10) bonusExperience = 3;
+				else if (enemy.getMaxHealth() > 10 && enemy.getMaxHealth() <= 20) bonusExperience = 9;
+				else if (enemy.getMaxHealth() > 20 && enemy.getMaxHealth() <= 50) bonusExperience = 20;
+				else if (enemy.getMaxHealth() > 50 && enemy.getMaxHealth() <= 100) bonusExperience = 55;
+				else if (enemy.getMaxHealth() > 100) bonusExperience = 80;
 				
 				if (enemyLevel != null && enemyLevel.getEnemyLevel() > 0)
 				{
@@ -97,9 +96,9 @@ public class EventLivingDeath
 					
 					if (level == 1) bonusExperience *= 0;
 					else if (level == 2) bonusExperience *= 1;
-					else if (level == 3) bonusExperience *= 1.5D;
+					else if (level == 3) bonusExperience *= 1.2D;
 					else if (level == 4) bonusExperience *= 2;
-					else if (level == 5) bonusExperience *= 2.5D;
+					else if (level == 5) bonusExperience *= 2.2D;
 					else if (level == 6) bonusExperience *= 3;
 				}
 				
