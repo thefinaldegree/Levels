@@ -146,21 +146,27 @@ public class EventItemTooltip
 			switch (rarity)
 			{
 				case COMMON:
-					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (" + (Config.commonDamage * (damage + 1F)) + ")");
+					int commonD = (int) (Config.commonDamage * (damage + 1F));
+					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (" + commonD + ")");
 					break;
 				case UNCOMMON:
-					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (" + (Config.uncommonDamage * (damage + 1F)) + ")");
+					int uncommonD = (int) (Config.uncommonDamage * (damage + 1F));
+					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (" + uncommonD + ")");
 					break;
 				case RARE:
-					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (" + (Config.rareDamage * (damage + 1F)) + ")");
+					int rareD = (int) (Config.rareDamage * (damage + 1F));
+					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (" + rareD + ")");
 					break;
 				case ULTRA_RARE:
+					int ultrarareD = (int) (Config.ultraRareDamage * (damage + 1F));
 					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (" + (Config.ultraRareDamage * (damage + 1F)) + ")");
 					break;
 				case LEGENDARY:
+					int legendaryD = (int) (Config.legendaryDamage * (damage + 1F));
 					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (" + (Config.legendaryDamage * (damage + 1F)) + ")");
 					break;
 				case ARCHAIC:
+					int archaicD = (int) (Config.archaicDamage * (damage + 1F));
 					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (" + (Config.archaicDamage * (damage + 1F)) + ")");
 					break;
 				default:
