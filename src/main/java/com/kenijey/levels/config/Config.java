@@ -18,6 +18,7 @@ public class Config
 	// configuration files
 	private static Configuration main;
 	private static Configuration abilities;
+	private static Configuration abilitychances;
 	private static Configuration rarities;
 	
 	/*
@@ -65,6 +66,28 @@ public class Config
 	public static boolean hardened = true;
 	public static boolean soulBoundArmor = true;
 	
+	//ABILITY CHANCES
+	
+	//weapon
+	public static int firechance = 4;
+	public static int frostchance = 4;
+	public static int poisonchance = 4;
+	public static int bloodlustchance = 7;
+	public static int chainedchance = 10;
+	public static int voidachance = 20;
+	public static int lightchance = 7;
+	public static int etherealchance = 7;
+	//armor
+	public static int moltenchance = 4;
+	public static int frozenchance = 4;
+	public static int toxicchance = 4;
+	public static int absorbchance = 7;
+	public static int voidArmorchance = 20;
+	public static int enlightenedchance = 7;
+	public static int hardenedchance = 10;
+	
+	
+	
 	/*
 	 * RARITIES
 	 */
@@ -87,6 +110,7 @@ public class Config
 	{
 		main = new Configuration(new File(dir.getPath(), "weaponlevels.cfg"));
 		abilities = new Configuration(new File(dir.getPath(), "abilities.cfg"));
+		abilitychances = new Configuration(new File(dir.getPath(), "abilitychances.cfg"));
 		rarities = new Configuration(new File(dir.getPath(), "rarities.cfg"));
 		
 		sync();
@@ -96,6 +120,7 @@ public class Config
 	{
 		syncMain();
 		syncAbilities();
+		syncAbilityChances();
 		syncRarities();
 	}
 	
@@ -266,6 +291,92 @@ public class Config
 		
 		abilities.setCategoryPropertyOrder(category, propOrder);
 		abilities.save();
+	}
+	
+	private static void syncAbilityChances() 
+	{
+		String category = "abilitychances";
+		List<String> propOrder = Lists.newArrayList();
+		Property prop;
+		
+		prop = abilitychances.get(category, "firechance", firechance);
+		prop.setComment("Determines how rare the Fire ability will occur. (Higher values=lower occurance) Default: 4");
+		firechance = prop.getInt();
+		propOrder.add(prop.getName());
+
+		prop = abilitychances.get(category, "frostchance", frostchance);
+		prop.setComment("Determines how rare the Frost ability will occur. (Higher values=lower occurance) Default: 4");
+		frostchance = prop.getInt();
+		propOrder.add(prop.getName());
+
+		prop = abilitychances.get(category, "poisonchance", poisonchance);
+		prop.setComment("Determines how rare the Poison ability will occur. (Higher values=lower occurance) Default: 4");
+		poisonchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "bloodlustchance", bloodlustchance);
+		prop.setComment("Determines how rare the Bloodlust ability will occur. (Higher values=lower occurance) Default: 7");
+		bloodlustchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "chainedchance", chainedchance);
+		prop.setComment("Determines how rare the Chained ability will occur. (Higher values=lower occurance) Default: 10");
+		chainedchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "voidachance", voidachance);
+		prop.setComment("Determines how rare the Void ability will occur. (Higher values=lower occurance) Default: 20");
+		voidachance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "lightchance", lightchance);
+		prop.setComment("Determines how rare the Light ability will occur. (Higher values=lower occurance) Default: 7");
+		lightchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "etherealchance", etherealchance);
+		prop.setComment("Determines how rare the Ethereal ability will occur. (Higher values=lower occurance) Default: 7");
+		etherealchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "moltenchance", moltenchance);
+		prop.setComment("Determines how rare the Molten ability will occur. (Higher values=lower occurance) Default: 4");
+		moltenchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "frozenchance", frozenchance);
+		prop.setComment("Determines how rare the Frozen ability will occur. (Higher values=lower occurance) Default: 4");
+		frozenchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "toxicchance", toxicchance);
+		prop.setComment("Determines how rare the Toxic ability will occur. (Higher values=lower occurance) Default: 4");
+		toxicchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "absorbchance", absorbchance);
+		prop.setComment("Determines how rare the Absorb ability will occur. (Higher values=lower occurance) Default: 7");
+		absorbchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "voidArmorchance", voidArmorchance);
+		prop.setComment("Determines how rare the Void(armor) ability will occur. (Higher values=lower occurance) Default: 20");
+		voidArmorchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "enlightenedchance", enlightenedchance);
+		prop.setComment("Determines how rare the Enlightened ability will occur. (Higher values=lower occurance) Default: 7");
+		enlightenedchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		prop = abilitychances.get(category, "hardenedchance", hardenedchance);
+		prop.setComment("Determines how rare the Hardened ability will occur. (Higher values=lower occurance) Default: 10");
+		hardenedchance = prop.getInt();
+		propOrder.add(prop.getName());
+		
+		
+		abilitychances.setCategoryPropertyOrder(category, propOrder);
+		abilitychances.save();
 	}
 	
 	private static void syncRarities()
