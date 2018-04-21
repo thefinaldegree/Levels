@@ -1,0 +1,129 @@
+﻿key.levels=Niveles de Arma
+
+key.gui.weapon_interface=Tecla de Subir de Nivel
+
+
+
+levels.rarity.0=Por defecto
+
+levels.rarity.1=Básico
+
+levels.rarity.2=Poco Común
+
+levels.rarity.3=Raro
+levels.rarity.4=Ultra Raro
+
+levels.rarity.5=Legendario
+
+levels.rarity.6=Arcaico
+
+
+levels.ability.0=Fuego
+
+levels.ability.1=Congelación
+
+levels.ability.2=Veneno
+
+levels.ability.3=Wither
+
+levels.ability.4=Encadenado
+
+levels.ability.5=Vacío
+
+levels.ability.6=Luz
+
+levels.ability.7=Etéreo
+
+levels.ability.8=Ligado al Alma
+
+levels.ability.9=Fundido
+
+levels.ability.10=Congelación
+
+levels.ability.11=Tóxico
+
+levels.ability.12=Absorción de vida
+
+levels.ability.13=Vacío
+
+levels.ability.14=Bestial
+
+levels.ability.15=Curación
+
+levels.ability.16=Endurecido
+
+levels.ability.17=Ligado al Alma
+
+
+
+levels.abilities.info.0=Quema a los enemigos durante un corto tiempo.
+
+levels.abilities.info.1=Aturde a los enemigos, congelándolos en el lugar por un corto tiempo.
+
+levels.abilities.info.2=Envenena a los enemigos por un corto tiempo.
+
+levels.abilities.info.3=Hace que los enemigos se marchiten. (Wither)
+
+levels.abilities.info.4=Los enemigos dentro de un cierto radio serán incendiados.
+
+levels.abilities.info.5=Pequeña posibilidad de causar una gran cantidad de daño.
+
+levels.abilities.info.6=Debilita y ciega a los enemigos.
+
+levels.abilities.info.7=Cura al jugador una parte del daño infligido.
+
+levels.abilities.info.8=El arma no desaparecerá al morir, seguirá en el inventario tras la reaparición.
+
+levels.abilities.info.9=Quema a los enemigos durante un corto tiempo.
+
+levels.abilities.info.10=Aturde a los enemigos, congelándolos en el lugar por un corto tiempo.
+
+levels.abilities.info.11=Envenena a los enemigos por un corto tiempo.
+
+levels.abilities.info.12=El jugador regenera la salud más rápido por un corto tiempo.
+
+levels.abilities.info.13=Pequeña posibilidad de causar una gran cantidad de daño.
+
+levels.abilities.info.14=Con poca salud, el jugador recibe una bonificación de daño.
+
+levels.abilities.info.15=Cura al jugador una parte del daño infligido.
+
+levels.abilities.info.16=Una pequeña posibilidad de negar todo el daño a ser repartido.
+
+levels.abilities.info.17=El arma no desaparecerá al morir y seguirá al reaparecer.
+
+
+
+levels.misc.level=Nivel
+
+levels.misc.max=Máximo
+
+levels.misc.experience=Experiencia
+
+levels.misc.durability=Durabilidad
+
+levels.misc.abilities=Abilidades
+
+levels.misc.abilities.shift=Abilidades (Shift)
+
+levels.misc.rarity=Rareza
+
+levels.misc.tier=Tier
+
+
+levels.misc.abilities.tokens=Tokens de Abilidad
+
+levels.misc.abilities.purchased=Abilidades Obtenidas
+
+levels.misc.abilities.active=Activas
+
+levels.misc.abilities.passive=Pasivas
+
+
+
+levels.update=Weapon Levels tiene una nueva versión disponible!
+
+
+levels.login1=¡Presiona 'L' (Por Defecto) con un arma/armadura en la mano para comenzar!
+
+levels.login2=(Puedes deshabilitar este mensaje en la configuración)
