@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.kenijey.levels.capabilities.CapabilityEnemyLevel;
+import com.kenijey.levels.commands.WPCommandRarity;
 import com.kenijey.levels.config.Config;
 import com.kenijey.levels.init.ModEvents;
 import com.kenijey.levels.network.PacketEnemyLevel;
@@ -21,6 +22,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
@@ -77,5 +79,11 @@ public class Levels
 	public static File getConfigDir()
 	{
 		return configDir;
+	}
+	
+	@EventHandler
+	public static void serverInit(FMLServerStartingEvent event)
+	{
+		event.registerServerCommand(new WPCommandRarity());
 	}
 }
