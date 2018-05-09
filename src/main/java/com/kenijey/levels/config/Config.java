@@ -99,12 +99,12 @@ public class Config
 	public static double legendaryChance = 0.035F;
 	public static double archaicChance = 0.015F;
 	
-	public static double commonDamage = 1F;
-	public static double uncommonDamage = 1.2F;
-	public static double rareDamage = 1.6F;
-	public static double ultraRareDamage = 2.0F;
-	public static double legendaryDamage = 2.5F;
-	public static double archaicDamage = 3.0F;
+	public static double commonDamage = 0F;
+	public static double uncommonDamage = 0.3F;
+	public static double rareDamage = 0.7F;
+	public static double ultraRareDamage = 1.0F;
+	public static double legendaryDamage = 1.5F;
+	public static double archaicDamage = 2.0F;
 	
 	public static void init(File dir)
 	{
@@ -422,32 +422,32 @@ public class Config
 		 * Damage Multipliers
 		 */
 		prop = rarities.get(category, "commonDamage", commonDamage);
-		prop.setComment("Sets the damage multiplier for the given rarity. Default: 1");
+		prop.setComment("Sets the damage multiplier for the given rarity. Default: 0");
 		commonDamage = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "uncommonDamage", uncommonDamage);
-		prop.setComment("Sets the damage multiplier for the given rarity. Default: 1.2");
+		prop.setComment("Sets the damage multiplier for the given rarity. Default: 0.3");
 		uncommonDamage = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "rareDamage", rareDamage);
-		prop.setComment("Sets the damage multiplier for the given rarity. Default: 1.6");
+		prop.setComment("Sets the damage multiplier for the given rarity. Default: 0.7");
 		rareDamage = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "ultraRareDamage", ultraRareDamage);
-		prop.setComment("Sets the damage multiplier for the given rarity. Default: 2");
+		prop.setComment("Sets the damage multiplier for the given rarity. Default: 1.0");
 		ultraRareDamage = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "legendaryDamage", legendaryDamage);
-		prop.setComment("Sets the damage multiplier for the given rarity. Default: 2.5");
+		prop.setComment("Sets the damage multiplier for the given rarity. Default: 1.5");
 		legendaryDamage = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "archaicDamage", archaicDamage);
-		prop.setComment("Sets the damage multiplier for the given rarity. Default: 3");
+		prop.setComment("Sets the damage multiplier for the given rarity. Default: 2");
 		archaicDamage = prop.getDouble();
 		propOrder.add(prop.getName());
 		
