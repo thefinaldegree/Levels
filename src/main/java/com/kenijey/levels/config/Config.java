@@ -31,7 +31,7 @@ public class Config
 	// experience
 	public static int maxLevel = 10;
 	public static int level1Exp = 40;
-	public static double expExponent = 2.4F;
+	public static double expExponent = 2.4D;
 	public static int expMultiplier = 20;
 	
 	// misc
@@ -92,19 +92,19 @@ public class Config
 	 * RARITIES
 	 */
 	
-	public static double commonChance = 0.5F;
-	public static double uncommonChance = 0.25F;
-	public static double rareChance = 0.13F;
-	public static double ultraRareChance = 0.07F;
-	public static double legendaryChance = 0.035F;
-	public static double archaicChance = 0.015F;
+	public static double commonChance = 0.5D;
+	public static double uncommonChance = 0.25D;
+	public static double rareChance = 0.13D;
+	public static double ultraRareChance = 0.07D;
+	public static double legendaryChance = 0.035D;
+	public static double archaicChance = 0.015D;
 	
-	public static double commonDamage = 0F;
-	public static double uncommonDamage = 0.3F;
-	public static double rareDamage = 0.7F;
-	public static double ultraRareDamage = 1.0F;
-	public static double legendaryDamage = 1.5F;
-	public static double archaicDamage = 2.0F;
+	public static double commonDamage = 0;
+	public static double uncommonDamage = 0.3D;
+	public static double rareDamage = 0.7D;
+	public static double ultraRareDamage = 1.0D;
+	public static double legendaryDamage = 1.5D;
+	public static double archaicDamage = 2.0D;
 	
 	public static void init(File dir)
 	{
