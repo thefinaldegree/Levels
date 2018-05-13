@@ -290,8 +290,8 @@ public class EventLivingHurt
 			{
 				float multiplier = 0F;
 				
-				if (Ability.VOID.getLevel(nbt) == 1) multiplier = 0.4F;
-				else if (Ability.VOID.getLevel(nbt) == 2) multiplier = 0.6F;
+				if (Ability.VOID.getLevel(nbt) == 1) multiplier = 0.45F;
+				else if (Ability.VOID.getLevel(nbt) == 2) multiplier = 0.65F;
 				else if (Ability.VOID.getLevel(nbt) == 3) multiplier = 0.8F;
 
 				float damage = enemy.getMaxHealth() * multiplier;
