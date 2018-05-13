@@ -196,7 +196,8 @@ public class GuiAbilitySelection extends GuiScreen
 		Rarity rarity = Rarity.getRarity(nbt);
 		
 		drawCenteredString(fontRenderer, stack.getDisplayName(), width / 2, 20, rarity.getHex());
-		drawString(fontRenderer, I18n.format("levels.misc.rarity") + ": " + rarity.getName(), width / 2 - 50, 40, rarity.getHex());
+		drawString(fontRenderer, I18n.format("levels.misc.rarity") + ": ", width / 2 - 50, 40, 0xFFFFFF);
+		drawString(fontRenderer, rarity.getName(), width / 2 - 15, 40, rarity.getHex());
 		drawCenteredString(fontRenderer, I18n.format("levels.misc.abilities"), width / 3, 80, 0xFFFFFF);
 		drawCenteredString(fontRenderer, I18n.format("levels.misc.abilities.tokens") + ": " + Experience.getAbilityTokens(nbt), width / 2 - 112, 230, 0xFFFFFF);
 		drawCenteredString(fontRenderer, I18n.format("levels.misc.abilities.purchased"), width / 2 + 112, 100, 0xFFFFFF);
