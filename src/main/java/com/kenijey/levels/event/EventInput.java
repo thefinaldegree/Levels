@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemBow;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -45,7 +46,7 @@ public class EventInput
 				
 				if (current != null)
 				{
-					if (current instanceof ItemSword || current instanceof ItemAxe || current instanceof ItemArmor || current instanceof ItemBow)
+					if (current instanceof ItemSword || current instanceof ItemAxe || current instanceof ItemHoe || current instanceof ItemArmor || current instanceof ItemBow)
 					{
 						if (key.isPressed())
 						{

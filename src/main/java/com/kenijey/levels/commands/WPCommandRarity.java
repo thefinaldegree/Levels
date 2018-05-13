@@ -12,6 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemBow;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
@@ -66,7 +67,8 @@ public class WPCommandRarity extends CommandBase
 		if((id < 1) || (id > 6)) throw new UsageException("Rarity ID must be 1, 2, 3, 4, 5 or 6!");
 		
 		if (((player.getHeldItemMainhand().getItem() instanceof ItemBow) || (player.getHeldItemMainhand().getItem() instanceof ItemSword) ||
-			 (player.getHeldItemMainhand().getItem() instanceof ItemAxe) || (player.getHeldItemMainhand().getItem() instanceof ItemArmor)) && (id <7 && id > 0))
+			 (player.getHeldItemMainhand().getItem() instanceof ItemAxe) || (player.getHeldItemMainhand().getItem() instanceof ItemHoe) ||
+			 (player.getHeldItemMainhand().getItem() instanceof ItemArmor)) && (id <7 && id > 0))
 		{
 		ItemStack item = player.getHeldItemMainhand();
 		NBTTagCompound nbt = NBTHelper.loadStackNBT(item);
@@ -78,6 +80,7 @@ public class WPCommandRarity extends CommandBase
 		if ( !((player.getHeldItemMainhand().getItem() instanceof ItemBow) ||
 			  (player.getHeldItemMainhand().getItem() instanceof ItemSword) ||
 			  (player.getHeldItemMainhand().getItem() instanceof ItemAxe) ||
+			  (player.getHeldItemMainhand().getItem() instanceof ItemHoe) ||
 			  (player.getHeldItemMainhand().getItem() instanceof ItemArmor))) throw new UsageException("Hold a weapon or an armor in your mainhand!");
 	}
 	
