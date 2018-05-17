@@ -93,11 +93,11 @@ public class Config
 	 */
 	
 	public static double commonChance = 0.5D;
-	public static double uncommonChance = 0.25D;
-	public static double rareChance = 0.13D;
-	public static double ultraRareChance = 0.07D;
-	public static double legendaryChance = 0.035D;
-	public static double archaicChance = 0.015D;
+	public static double uncommonChance = 0.2D;
+	public static double rareChance = 0.12D;
+	public static double ultraRareChance = 0.06D;
+	public static double legendaryChance = 0.03D;
+	public static double archaicChance = 0.01D;
 	
 	public static double commonDamage = 0;
 	public static double uncommonDamage = 0.3D;
@@ -394,27 +394,27 @@ public class Config
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "uncommonChance", uncommonChance);
-		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.25");
+		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.2");
 		uncommonChance = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "rareChance", rareChance);
-		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.13");
+		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.12");
 		rareChance = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "ultraRareChance", ultraRareChance);
-		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.07");
+		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.06");
 		ultraRareChance = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "legendaryChance", legendaryChance);
-		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.035");
+		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.03");
 		legendaryChance = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "archaicChance", archaicChance);
-		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.015");
+		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.01");
 		archaicChance = prop.getDouble();
 		propOrder.add(prop.getName());
 		
