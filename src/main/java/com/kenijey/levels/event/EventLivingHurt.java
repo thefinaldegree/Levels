@@ -226,8 +226,7 @@ public class EventLivingHurt
 			if (stack.getItem() instanceof ItemSword || stack.getItem() instanceof ItemAxe || stack.getItem() instanceof ItemHoe || stack.getItem() instanceof ItemBow)
 				event.setAmount((float) (event.getAmount() + (event.getAmount() * damageMultiplier)));
 			else if (stack.getItem() instanceof ItemArmor)
-				event.setAmount((float) (event.getAmount() / (1.0F + damageMultiplier)));
-			
+				event.setAmount((float) (event.getAmount() / (1.0F + (damageMultiplier/5.2F))));
 		}
 	}
 	
