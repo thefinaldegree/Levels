@@ -36,12 +36,6 @@ public class EventPlayerDrops
 			{
 				ItemStack stack = event.getDrops().get(i).getItem();
 				NBTTagCompound nbt = NBTHelper.loadStackNBT(stack);
-				
-				if (nbt != null && Ability.SOUL_BOUND.hasAbility(nbt))
-				{
-					event.getDrops().remove(i);
-					player.inventory.addItemStackToInventory(stack);
-				}
 			}
 		}
 	}

@@ -26,7 +26,6 @@ public enum Ability
 	// passive
 	LIGHT("weapon", "passive", Config.light, TextFormatting.YELLOW, 0xFFFF55, 2, 1),
 	ETHEREAL("weapon", "passive", Config.ethereal, TextFormatting.GREEN, 0x55FF55, 2, 2),
-	SOUL_BOUND("weapon", "passive", Config.soulBound, TextFormatting.DARK_PURPLE, 0xAA00AA, 3, 1),
 	
 	// armor abilities
 	// active
@@ -38,8 +37,7 @@ public enum Ability
 	// passive
 	BEASTIAL("armor", "passive", Config.beastial, TextFormatting.DARK_RED, 0xAA0000, 1, 1.5),
 	ENLIGHTENED("armor", "passive", Config.enlightened, TextFormatting.YELLOW, 0xFFFF55, 2, 2),
-	HARDENED("armor", "passive", Config.hardened, TextFormatting.GRAY, 0xAAAAAA, 2, 1),
-	SOUL_BOUND_ARMOR("armor", "passive", Config.soulBoundArmor, TextFormatting.DARK_PURPLE, 0xAA00AA, 3, 1);
+	HARDENED("armor", "passive", Config.hardened, TextFormatting.GRAY, 0xAAAAAA, 2, 1);
 	
 	public static int WEAPON_ABILITIES;
 	public static int ARMOR_ABILITIES;

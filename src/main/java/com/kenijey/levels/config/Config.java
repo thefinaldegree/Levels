@@ -54,7 +54,6 @@ public class Config
 	public static boolean voida = true;
 	public static boolean light = true;
 	public static boolean ethereal = true;
-	public static boolean soulBound = true;
 	
 	public static boolean molten = true;
 	public static boolean frozen = true;
@@ -64,7 +63,6 @@ public class Config
 	public static boolean beastial = true;
 	public static boolean enlightened = true;
 	public static boolean hardened = true;
-	public static boolean soulBoundArmor = true;
 	
 	//ABILITY CHANCES
 	
@@ -238,11 +236,6 @@ public class Config
 		ethereal = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
-		prop = abilities.get(category, "soulBoundAbility", soulBound);
-		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
-		soulBound = prop.getBoolean();
-		propOrder.add(prop.getName());
-		
 		// armor
 		prop = abilities.get(category, "moltenAbility", molten);
 		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
@@ -282,11 +275,6 @@ public class Config
 		prop = abilities.get(category, "hardenedAbility", hardened);
 		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
 		hardened = prop.getBoolean();
-		propOrder.add(prop.getName());
-		
-		prop = abilities.get(category, "soulBoundArmorAbility", soulBoundArmor);
-		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
-		soulBoundArmor = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
 		abilities.setCategoryPropertyOrder(category, propOrder);
