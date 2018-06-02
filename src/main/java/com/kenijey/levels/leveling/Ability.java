@@ -33,7 +33,6 @@ public enum Ability
 	FROZEN("armor", "active", Config.frozen, TextFormatting.AQUA, 0x55FFFF, 1, 1.5),
 	TOXIC("armor", "active", Config.toxic, TextFormatting.DARK_GREEN, 0x00AA00, 1, 1.5),
 	ABSORB("armor", "active", Config.absorb, TextFormatting.GREEN, 0x55FF55, 2, 1.5),
-	VOID_ARMOR("armor", "active", Config.voidArmor, TextFormatting.DARK_GRAY, 0x555555, 3, 1),
 	// passive
 	BEASTIAL("armor", "passive", Config.beastial, TextFormatting.DARK_RED, 0xAA0000, 1, 1.5),
 	ENLIGHTENED("armor", "passive", Config.enlightened, TextFormatting.YELLOW, 0xFFFF55, 2, 2),

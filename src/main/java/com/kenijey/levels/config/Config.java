@@ -59,7 +59,6 @@ public class Config
 	public static boolean frozen = true;
 	public static boolean toxic = true;
 	public static boolean absorb = true;
-	public static boolean voidArmor = true;
 	public static boolean beastial = true;
 	public static boolean enlightened = true;
 	public static boolean hardened = true;
@@ -80,7 +79,6 @@ public class Config
 	public static int frozenchance = 4;
 	public static int toxicchance = 4;
 	public static int absorbchance = 7;
-	public static int voidArmorchance = 20;
 	public static int enlightenedchance = 7;
 	public static int hardenedchance = 10;
 	
@@ -257,11 +255,6 @@ public class Config
 		absorb = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
-		prop = abilities.get(category, "voidArmorAbility", voidArmor);
-		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
-		voidArmor = prop.getBoolean();
-		propOrder.add(prop.getName());
-		
 		prop = abilities.get(category, "beastialAbility", beastial);
 		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
 		beastial = prop.getBoolean();
@@ -345,11 +338,6 @@ public class Config
 		prop = abilitychances.get(category, "absorbchance", absorbchance);
 		prop.setComment("Determines how rare the Absorb ability will occur. (Higher values=lower occurance) Default: 7");
 		absorbchance = prop.getInt();
-		propOrder.add(prop.getName());
-		
-		prop = abilitychances.get(category, "voidArmorchance", voidArmorchance);
-		prop.setComment("Determines how rare the Void(armor) ability will occur. (Higher values=lower occurance) Default: 20");
-		voidArmorchance = prop.getInt();
 		propOrder.add(prop.getName());
 		
 		prop = abilitychances.get(category, "enlightenedchance", enlightenedchance);

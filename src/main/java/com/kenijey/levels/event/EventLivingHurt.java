@@ -340,19 +340,7 @@ public class EventLivingHurt
 				double multiplier = Ability.ABSORB.getMultiplier(Ability.ABSORB.getLevel(nbt));
 				player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, (int) (20 * (5 * multiplier)), Ability.ABSORB.getLevel(nbt)));
 			}
-			
-			if (Ability.VOID.hasAbility(nbt) && (int) (Math.random() * Config.voidArmorchance) == 0)
-			{
-				float multiplier = 0F;
-				
-				if (Ability.VOID.getLevel(nbt) == 1) multiplier = 0.4F;
-				else if (Ability.VOID.getLevel(nbt) == 2) multiplier = 0.6F;
-				else if (Ability.VOID.getLevel(nbt) == 3) multiplier = 0.8F;
 
-				float damage = enemy.getMaxHealth() * multiplier;
-				event.setAmount(damage);
-			}
-			
 			// passive
 			if (Ability.BEASTIAL.hasAbility(nbt))
 			{
