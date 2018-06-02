@@ -7,8 +7,6 @@ import com.kenijey.levels.event.EventItemTooltip;
 import com.kenijey.levels.event.EventLivingDeath;
 import com.kenijey.levels.event.EventLivingHurt;
 import com.kenijey.levels.event.EventLivingUpdate;
-import com.kenijey.levels.event.EventPlayerClone;
-import com.kenijey.levels.event.EventPlayerDrops;
 import com.kenijey.levels.event.EventPlayerTracking;
 
 import net.minecraftforge.common.MinecraftForge;
@@ -27,8 +25,6 @@ public class ModEvents
 		MinecraftForge.EVENT_BUS.register(new EventInput());
 		MinecraftForge.EVENT_BUS.register(new EventLivingHurt());
 		MinecraftForge.EVENT_BUS.register(new EventLivingDeath());
-		MinecraftForge.EVENT_BUS.register(new EventPlayerDrops());
-		MinecraftForge.EVENT_BUS.register(new EventPlayerClone());
 		MinecraftForge.EVENT_BUS.register(new EventAchievement());
 		
 		if (Config.enemyLeveling)
