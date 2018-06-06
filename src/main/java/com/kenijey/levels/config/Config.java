@@ -54,6 +54,7 @@ public class Config
 	public static boolean voida = true;
 	public static boolean light = true;
 	public static boolean ethereal = true;
+	public static boolean bloodthirst = true;
 	
 	public static boolean molten = true;
 	public static boolean frozen = true;
@@ -232,6 +233,11 @@ public class Config
 		prop = abilities.get(category, "etherealAbility", ethereal);
 		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
 		ethereal = prop.getBoolean();
+		propOrder.add(prop.getName());
+		
+		prop = abilities.get(category, "bloodthirstAbility", bloodthirst);
+		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
+		bloodthirst = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
 		// armor

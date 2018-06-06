@@ -26,6 +26,7 @@ public enum Ability
 	// passive
 	LIGHT("weapon", "passive", Config.light, TextFormatting.YELLOW, 0xFFFF55, 2, 1),
 	ETHEREAL("weapon", "passive", Config.ethereal, TextFormatting.GREEN, 0x55FF55, 2, 2),
+	BLOODTHIRST("weapon", "passive", Config.bloodthirst, TextFormatting.DARK_PURPLE, 0xAA00AA, 3, 1),
 	
 	// armor abilities
 	// active

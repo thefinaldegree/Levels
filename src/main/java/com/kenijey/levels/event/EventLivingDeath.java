@@ -3,6 +3,7 @@ package com.kenijey.levels.event;
 import com.kenijey.levels.capabilities.CapabilityEnemyLevel;
 import com.kenijey.levels.capabilities.IEnemyLevel;
 import com.kenijey.levels.config.Config;
+import com.kenijey.levels.leveling.Ability;
 import com.kenijey.levels.leveling.Experience;
 import com.kenijey.levels.util.NBTHelper;
 
@@ -43,6 +44,10 @@ public class EventLivingDeath
 				
 				if (nbt != null)
 				{
+					if (Ability.BLOODTHIRST.hasAbility(nbt))
+					{
+						player.inventory.getCurrentItem().setItemDamage((int) (player.inventory.getCurrentItem().getItemDamage() - (Math.random() * 4)));
+					}
 					addBonusExperience(event, nbt);
 					updateLevel(player, stack, nbt);
 					NBTHelper.saveStackNBT(stack, nbt);
@@ -56,6 +61,10 @@ public class EventLivingDeath
 					
 					if (nbt != null)
 					{
+						if (Ability.BLOODTHIRST.hasAbility(nbt))
+						{
+							player.inventory.getCurrentItem().setItemDamage((int) (player.inventory.getCurrentItem().getItemDamage() - (Math.random() * 4)));
+						}
 						addBonusExperience(event, nbt);
 						updateLevel(player, stack, nbt);
 					}
