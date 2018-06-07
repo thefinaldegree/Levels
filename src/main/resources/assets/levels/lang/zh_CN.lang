@@ -1,5 +1,5 @@
-﻿key.levels=Levels 2
-key.gui.weapon_interface=Weapon Leveling Key
+﻿key.levels=武器等级
+key.gui.weapon_interface=武器平衡系统
 
 levels.rarity.0=默认
 levels.rarity.1=普通
@@ -10,15 +10,15 @@ levels.rarity.5=传奇
 levels.rarity.6=神话
 
 levels.ability.0=烈焰
-levels.ability.1=冰霜
+levels.ability.1=眩晕
 levels.ability.2=毒药
 levels.ability.3=凋零
 levels.ability.4=星云锁链
 levels.ability.5=致命
 levels.ability.6=光明
 levels.ability.7=嗜血
-levels.ability.8=火焰护体
-levels.ability.8=
+levels.ability.8=修复
+levels.ability.9=火焰护体
 levels.ability.10=冰霜护体
 levels.ability.11=毒液护体
 levels.ability.12=吸收
@@ -33,8 +33,8 @@ levels.abilities.info.3=使敌人在短时间内凋零.
 levels.abilities.info.4=使一定范围内的敌人受到伤害.
 levels.abilities.info.5=小概率造成巨大伤害.
 levels.abilities.info.6=削弱和致盲敌人.
-levels.abilities.info.7=恢复造成伤害的一部分.
-levels.abilities.info.8=
+levels.abilities.info.7=造成伤害后恢复一部分血量
+levels.abilities.info.8=如果你杀了一个目标，你的武器就会被修复。
 levels.abilities.info.9=使敌人在短时间内燃烧.
 levels.abilities.info.10=使敌人在短时间内无法移动.
 levels.abilities.info.11=使敌人在短时间内中毒.
@@ -57,5 +57,5 @@ levels.misc.abilities.active=主动
 levels.misc.abilities.passive=被动
 
 levels.update=级别有可用的新版本！
-levels.login1=按“L”与武器/装甲的手开始！
+levels.login1=把武器/装甲放入手中按“L”开始！
 levels.login2=（你可以在配置中禁用此消息）
