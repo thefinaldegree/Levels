@@ -20,7 +20,7 @@ public enum Ability
 	FIRE("weapon", "active", Config.fire, TextFormatting.RED, 0xFF5555, 1, 1.5),
 	FROST("weapon", "active", Config.frost, TextFormatting.AQUA, 0x55FFFF, 1, 1.5),
 	POISON("weapon", "active", Config.poison, TextFormatting.DARK_GREEN, 0x00AA00, 1, 1.5),
-	BLOODLUST("weapon", "active", Config.bloodlust, TextFormatting.DARK_RED, 0xAA0000, 2, 1.5),
+	INNATE("weapon", "active", Config.innate, TextFormatting.DARK_RED, 0xAA0000, 2, 1.5),
 	CHAINED("weapon", "active", Config.chained, TextFormatting.GRAY, 0xAAAAAA, 3, 1.5),
 	VOID("weapon", "active", Config.voida, TextFormatting.DARK_GRAY, 0x555555, 3, 1),
 	// passive

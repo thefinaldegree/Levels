@@ -260,10 +260,10 @@ public class EventLivingHurt
 				enemy.addPotionEffect(new PotionEffect(MobEffects.POISON, (int) (20 * (7 * multiplier)), Ability.POISON.getLevel(nbt)));
 			}
 			
-			if (Ability.BLOODLUST.hasAbility(nbt) && (int) (Math.random() * Config.bloodlustchance) == 0)
+			if (Ability.INNATE.hasAbility(nbt) && (int) (Math.random() * Config.innatechance) == 0)
 			{
-				double multiplier = Ability.BLOODLUST.getMultiplier(Ability.BLOODLUST.getLevel(nbt));
-				enemy.addPotionEffect(new PotionEffect(MobEffects.WITHER, (int) (20 * (4 * multiplier)), Ability.BLOODLUST.getLevel(nbt)));
+				double multiplier = Ability.INNATE.getMultiplier(Ability.INNATE.getLevel(nbt));
+				enemy.addPotionEffect(new PotionEffect(MobEffects.WITHER, (int) (20 * (4 * multiplier)), Ability.INNATE.getLevel(nbt)));
 			}
 
 			if (Ability.CHAINED.hasAbility(nbt) && (int) (Math.random() * Config.chainedchance) == 0)

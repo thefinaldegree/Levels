@@ -49,7 +49,7 @@ public class Config
 	public static boolean fire = true;
 	public static boolean frost = true;
 	public static boolean poison = true;
-	public static boolean bloodlust = true;
+	public static boolean innate = true;
 	public static boolean chained = true;
 	public static boolean voida = true;
 	public static boolean light = true;
@@ -70,7 +70,7 @@ public class Config
 	public static int firechance = 4;
 	public static int frostchance = 4;
 	public static int poisonchance = 4;
-	public static int bloodlustchance = 7;
+	public static int innatechance = 7;
 	public static int chainedchance = 10;
 	public static int voidachance = 20;
 	public static int lightchance = 7;
@@ -210,9 +210,9 @@ public class Config
 		poison = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
-		prop = abilities.get(category, "bloodlustAbility", bloodlust);
+		prop = abilities.get(category, "innateAbility", innate);
 		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
-		bloodlust = prop.getBoolean();
+		innate = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
 		prop = abilities.get(category, "chainedAbility", chained);
@@ -301,9 +301,9 @@ public class Config
 		poisonchance = prop.getInt();
 		propOrder.add(prop.getName());
 		
-		prop = abilitychances.get(category, "bloodlustchance", bloodlustchance);
-		prop.setComment("Determines how rare the Bloodlust ability will occur. (Higher values=lower occurance) Default: 7");
-		bloodlustchance = prop.getInt();
+		prop = abilitychances.get(category, "innatechance", innatechance);
+		prop.setComment("Determines how rare the Innate ability will occur. (Higher values=lower occurance) Default: 7");
+		innatechance = prop.getInt();
 		propOrder.add(prop.getName());
 		
 		prop = abilitychances.get(category, "chainedchance", chainedchance);
