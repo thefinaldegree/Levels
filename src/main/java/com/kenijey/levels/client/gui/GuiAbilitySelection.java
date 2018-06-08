@@ -225,12 +225,12 @@ public class GuiAbilitySelection extends GuiScreen
 				if (abilities.get(i).getType().equals("active"))
 				{
 					j++;
-					drawCenteredString(fontRenderer, abilities.get(i).getName(nbt), width / 2 + 75, 135 + (j * 10), abilities.get(i).getHex());
+					drawCenteredString(fontRenderer, abilities.get(i).getName(nbt), width / 2 + 75, 135 + (j * 12), abilities.get(i).getHex());
 				}
-				else
+				else if (abilities.get(i).getType().equals("passive"))
 				{
 					k++;
-					drawCenteredString(fontRenderer, abilities.get(i).getName(nbt), width / 2 + 150, 135 + (k * 10), abilities.get(i).getHex());
+					drawCenteredString(fontRenderer, abilities.get(i).getName(nbt), width / 2 + 150, 135 + (k * 12), abilities.get(i).getHex());
 				}
 			}
 		}
