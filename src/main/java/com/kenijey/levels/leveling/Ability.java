@@ -24,7 +24,7 @@ public enum Ability
 	CHAINED("weapon", "active", Config.chained, TextFormatting.GRAY, 0xAAAAAA, 3, 1.5),
 	VOID("weapon", "active", Config.voida, TextFormatting.DARK_GRAY, 0x555555, 3, 1),
 	// passive
-	LIGHT("weapon", "passive", Config.light, TextFormatting.YELLOW, 0xFFFF55, 2, 1),
+	ILLUMINATION("weapon", "passive", Config.illumination, TextFormatting.YELLOW, 0xFFFF55, 2, 1),
 	ETHEREAL("weapon", "passive", Config.ethereal, TextFormatting.GREEN, 0x55FF55, 2, 2),
 	BLOODTHIRST("weapon", "passive", Config.bloodthirst, TextFormatting.DARK_PURPLE, 0xAA00AA, 3, 1),
 	

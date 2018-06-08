@@ -52,7 +52,7 @@ public class Config
 	public static boolean innate = true;
 	public static boolean chained = true;
 	public static boolean voida = true;
-	public static boolean light = true;
+	public static boolean illumination = true;
 	public static boolean ethereal = true;
 	public static boolean bloodthirst = true;
 	
@@ -73,7 +73,7 @@ public class Config
 	public static int innatechance = 7;
 	public static int chainedchance = 10;
 	public static int voidachance = 20;
-	public static int lightchance = 7;
+	public static int illuminationchance = 7;
 	public static int etherealchance = 7;
 	//armor
 	public static int moltenchance = 4;
@@ -225,9 +225,9 @@ public class Config
 		voida = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
-		prop = abilities.get(category, "lightAbility", light);
+		prop = abilities.get(category, "illuminationAbility", illumination);
 		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
-		light = prop.getBoolean();
+		illumination = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
 		prop = abilities.get(category, "etherealAbility", ethereal);
@@ -316,9 +316,9 @@ public class Config
 		voidachance = prop.getInt();
 		propOrder.add(prop.getName());
 		
-		prop = abilitychances.get(category, "lightchance", lightchance);
-		prop.setComment("Determines how rare the Light ability will occur. (Higher values=lower occurance) Default: 7");
-		lightchance = prop.getInt();
+		prop = abilitychances.get(category, "illuminationchance", illuminationchance);
+		prop.setComment("Determines how rare the Illumination ability will occur. (Higher values=lower occurance) Default: 7");
+		illuminationchance = prop.getInt();
 		propOrder.add(prop.getName());
 		
 		prop = abilitychances.get(category, "etherealchance", etherealchance);
