@@ -67,7 +67,7 @@ public class GuiAbilitySelection extends GuiScreen
 		    					j++;
 			    			}
 		    				else
-			    				weaponAbilities[i] = new GuiButton(i, width / 2 - 100, 100 + ((i - j) * 20), 100, 20, Ability.WEAPONS.get(i).getName() + " (" + Ability.WEAPONS.get(i).getTier() + ")");
+			    				weaponAbilities[i] = new GuiButton(i, width / 2 - 100, 100 + ((i - j) * 20), 105, 20, Ability.WEAPONS.get(i).getName() + " (" + Ability.WEAPONS.get(i).getTier() + ")");
 		    				
 		    				this.buttonList.add(weaponAbilities[i]);
 		    				weaponAbilities[i].enabled = false;
@@ -245,6 +245,10 @@ public class GuiAbilitySelection extends GuiScreen
 	 */
 	private void displayButtons(GuiButton[] buttons, ArrayList<Ability> abilities, NBTTagCompound nbt)
 	{
+		for (int i = 0; i < buttons.length; i++)
+		{
+			buttons[i].enabled = false;
+		}
 		if (Experience.getAbilityTokens(nbt) > 0)
 		{
 			for (int i = 0; i < buttons.length; i++)
@@ -252,61 +256,47 @@ public class GuiAbilitySelection extends GuiScreen
 				if (Experience.getAbilityTokens(nbt) == 1)
 				{
 					if (abilities.get(i).getTier() == 1)
-						buttons[i].enabled = true;
+					{
+						if (!(abilities.get(i).hasAbility(nbt)))
+							buttons[i].enabled = true;
 					
-					if (abilities.get(i).hasAbility(nbt) && abilities.get(i).canUpgradeLevel(nbt))
-						buttons[i].enabled = true;
-					else if (abilities.get(i).hasAbility(nbt))
-						buttons[i].enabled = false;
+						else if (abilities.get(i).canUpgradeLevel(nbt))
+							buttons[i].enabled = true;
+						else
+							buttons[i].enabled = false;
+					}
 				}
 				
 				if (Experience.getAbilityTokens(nbt) == 2)
 				{
 					if (abilities.get(i).getTier() <= 2)
-						buttons[i].enabled = true;
-				}
-				else
-				{
-					if (abilities.get(i).getTier() == 2)
-						buttons[i].enabled = false;
-					
-					if (abilities.get(i).hasAbility(nbt) && abilities.get(i).canUpgradeLevel(nbt))
-						buttons[i].enabled = true;
-					else if (abilities.get(i).hasAbility(nbt))
-						buttons[i].enabled = false;
+					{
+						if (!(abilities.get(i).hasAbility(nbt)))
+							buttons[i].enabled = true;
+						else if (abilities.get(i).canUpgradeLevel(nbt))
+							buttons[i].enabled = true;
+						else
+							buttons[i].enabled = false;
+					}
 				}
 				
 				if (Experience.getAbilityTokens(nbt) >= 3)
 				{
-					buttons[i].enabled = true;
-					
-					if (abilities.get(i).hasAbility(nbt) && abilities.get(i).canUpgradeLevel(nbt))
-						buttons[i].enabled = true;
-					else if (abilities.get(i).hasAbility(nbt))
-						buttons[i].enabled = false;
-				}
-				else
-				{
-					if (abilities.get(i).getTier() == 3)
-						buttons[i].enabled = false;
-					
-					if (abilities.get(i).hasAbility(nbt) && abilities.get(i).canUpgradeLevel(nbt))
-						buttons[i].enabled = true;
-					else if (abilities.get(i).hasAbility(nbt))
-						buttons[i].enabled = false;
+					if (abilities.get(i).getTier() <= 3)
+					{
+						if (!(abilities.get(i).hasAbility(nbt)))
+							buttons[i].enabled = true;
+						else if (abilities.get(i).canUpgradeLevel(nbt))
+							buttons[i].enabled = true;
+						else
+							buttons[i].enabled = false;
+					}
 				}
 				
 				if (abilities.get(i).hasAbility(nbt) && abilities.get(i).getType().equals("passive"))
 				{
 					buttons[i].enabled = false;
 				}
-			}
-		}
-		else
-		{
-			for (int i = 0; i < buttons.length; i++)
-			{
-				buttons[i].enabled = false;
 			}
 		}
 	}
