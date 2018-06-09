@@ -17,7 +17,7 @@ import net.minecraft.util.text.TextFormatting;
 public enum Rarity 
 {
 	DEFAULT("", 0, 0.0),
-	BASIC(TextFormatting.WHITE, 0xFFFFFF, Config.commonChance),
+	BASIC(TextFormatting.WHITE, 0xFFFFFF, Config.basicChance),
 	UNCOMMON(TextFormatting.DARK_GREEN, 0x00AA00, Config.uncommonChance),
 	RARE(TextFormatting.AQUA, 0x55FFFF, Config.rareChance),
 	ULTRA_RARE(TextFormatting.DARK_PURPLE, 0xAA00AA, Config.ultraRareChance),
