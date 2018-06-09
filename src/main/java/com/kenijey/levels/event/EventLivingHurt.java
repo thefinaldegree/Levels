@@ -139,7 +139,7 @@ public class EventLivingHurt
 			boolean isDev = (Boolean) Launch.blackboard.get("fml.deobfuscatedEnvironment");
 			
 			if (isDev)
-				Experience.setExperience(nbt, Experience.getExperience(nbt) + 100);
+				Experience.setExperience(nbt, Experience.getExperience(nbt) + Experience.getNeededExpForNextLevel(nbt) + 1);
 			else
 				Experience.setExperience(nbt, Experience.getExperience(nbt) + 1);
 		}
