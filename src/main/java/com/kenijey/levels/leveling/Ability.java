@@ -161,13 +161,13 @@ public enum Ability
 	public String getName(NBTTagCompound nbt)
 	{
 		if (getLevel(nbt) == 1)
-			return I18n.format("levels.ability." + this.ordinal());
+			return I18n.format("levels.ability." + this.toString());
 		else if (getLevel(nbt) == 2)
-			return I18n.format("levels.ability." + this.ordinal()) + " II";
+			return I18n.format("levels.ability." + this.toString()) + " II";
 		else if (getLevel(nbt) == 3)
-			return I18n.format("levels.ability." + this.ordinal()) + " III";
-		
-		return I18n.format("levels.ability." + this.ordinal());
+			return I18n.format("levels.ability." + this.toString()) + " III";
+		else
+			return I18n.format(this.toString());
 	}
 	
 	public String getType()

@@ -63,11 +63,11 @@ public class GuiAbilitySelection extends GuiScreen
 		    			{
 		    				if (Ability.WEAPONS.get(i).getType().equals("active"))
 			    			{
-		    					weaponAbilities[i] = new GuiButton(i, width / 2 - 215, 100 + (i * 20), 100, 20, Ability.WEAPONS.get(i).getName() + " (" + Ability.WEAPONS.get(i).getTier() + ")");
+		    					weaponAbilities[i] = new GuiButton(i, width / 2 - 215, 100 + (i * 20), 100, 20, I18n.format("levels.ability." + Ability.WEAPONS.get(i).getName()) + " (" + Ability.WEAPONS.get(i).getTier() + ")");
 		    					j++;
 			    			}
 		    				else
-			    				weaponAbilities[i] = new GuiButton(i, width / 2 - 100, 100 + ((i - j) * 20), 105, 20, Ability.WEAPONS.get(i).getName() + " (" + Ability.WEAPONS.get(i).getTier() + ")");
+			    				weaponAbilities[i] = new GuiButton(i, width / 2 - 100, 100 + ((i - j) * 20), 105, 20, I18n.format("levels.ability." + Ability.WEAPONS.get(i).getName()) + " (" + Ability.WEAPONS.get(i).getTier() + ")");
 		    				
 		    				this.buttonList.add(weaponAbilities[i]);
 		    				weaponAbilities[i].enabled = false;
@@ -87,11 +87,11 @@ public class GuiAbilitySelection extends GuiScreen
 		    			{
 		    				if (Ability.ARMOR.get(i).getType().equals("active"))
 			    			{
-		    					armorAbilities[i] = new GuiButton(i, width / 2 - 215, 100 + (i * 20), 100, 20, Ability.ARMOR.get(i).getName() + " (" + Ability.ARMOR.get(i).getTier() + ")");
+		    					armorAbilities[i] = new GuiButton(i, width / 2 - 215, 100 + (i * 20), 100, 20, I18n.format("levels.ability." + Ability.WEAPONS.get(i).getName()) + " (" + Ability.WEAPONS.get(i).getTier() + ")");
 		    					j++;
 			    			}
 		    				else
-		    					armorAbilities[i] = new GuiButton(i, width / 2 - 100, 100 + ((i - j) * 20), 105, 20, Ability.ARMOR.get(i).getName() + " (" + Ability.ARMOR.get(i).getTier() + ")");
+		    					armorAbilities[i] = new GuiButton(i, width / 2 - 100, 100 + ((i - j) * 20), 105, 20, I18n.format("levels.ability." + Ability.WEAPONS.get(i).getName()) + " (" + Ability.WEAPONS.get(i).getTier() + ")");
 		    				
 		    				this.buttonList.add(armorAbilities[i]);
 		    				armorAbilities[i].enabled = false;
@@ -195,9 +195,9 @@ public class GuiAbilitySelection extends GuiScreen
 	{
 		Rarity rarity = Rarity.getRarity(nbt);
 		
-		drawCenteredString(fontRenderer, stack.getDisplayName(), width / 2, 20, rarity.getHex());
+		drawCenteredString(fontRenderer, stack.getDisplayName(), width / 2, 20, 0xFFFFFF);
 		drawString(fontRenderer, I18n.format("levels.misc.rarity") + ": ", width / 2 - 50, 40, 0xFFFFFF);
-		drawString(fontRenderer, rarity.getName(), width / 2 - 15, 40, rarity.getHex());
+		drawString(fontRenderer, I18n.format("levels.rarity." + rarity.getName()), width / 2 - 15, 40, rarity.getHex());
 		drawCenteredString(fontRenderer, I18n.format("levels.misc.abilities"), width / 3, 80, 0xFFFFFF);
 		drawCenteredString(fontRenderer, I18n.format("levels.misc.abilities.tokens") + ": " + Experience.getAbilityTokens(nbt), width / 2 - 112, 230, 0xFFFFFF);
 		drawCenteredString(fontRenderer, I18n.format("levels.misc.abilities.purchased"), width / 2 + 112, 100, 0xFFFFFF);
@@ -225,7 +225,7 @@ public class GuiAbilitySelection extends GuiScreen
 				if (abilities.get(i).getType().equals("active"))
 				{
 					j++;
-					drawCenteredString(fontRenderer, abilities.get(i).getName(nbt), width / 2 + 75, 135 + (j * 12), abilities.get(i).getHex());
+					drawCenteredString(fontRenderer, I18n.format(abilities.get(i).getName(nbt)), width / 2 + 75, 135 + (j * 12), abilities.get(i).getHex());
 				}
 				else if (abilities.get(i).getType().equals("passive"))
 				{
@@ -310,7 +310,7 @@ public class GuiAbilitySelection extends GuiScreen
 			if (checker.checkHover(mouseX, mouseY))
 			{
 				List<String> list = new ArrayList<String>();
-				list.add(abilities.get(i).getColor() + abilities.get(i).getName() + " (" + abilities.get(i).getTypeName() + ")");
+				list.add(abilities.get(i).getColor() + I18n.format("levels.ability." + abilities.get(i).getName()) + " (" + abilities.get(i).getTypeName() + ")");
 				list.add("");
 				list.add(I18n.format("levels.abilities.info." + abilities.get(i).getName()));
 				list.add("");
