@@ -295,13 +295,10 @@ public class EventLivingHurt
 				enemy.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, (int) (20 * 6), Ability.ILLUMINATION.getLevel(nbt)));
 			}
 			
-			if (Ability.ETHEREAL.hasAbility(nbt))
+			if (Ability.BLOODTHIRST.hasAbility(nbt))
 			{
-				float addition =(float)(event.getAmount() * (Ability.ETHEREAL.getLevel(nbt) * 12) / 100);
+				float addition =(float)(event.getAmount() * (Ability.BLOODTHIRST.getLevel(nbt) * 12) / 100);
 				player.setHealth(player.getHealth()+addition);
-				System.out.println("ethereal level: " + Ability.ETHEREAL.getLevel(nbt));
-				System.out.println("damage dealt: " + event.getAmount());
-				System.out.println("health added: " + addition);
 			}
 		}
 	}

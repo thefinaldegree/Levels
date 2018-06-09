@@ -44,9 +44,9 @@ public class EventLivingDeath
 				
 				if (nbt != null)
 				{
-					if (Ability.BLOODTHIRST.hasAbility(nbt))
+					if (Ability.ETHEREAL.hasAbility(nbt))
 					{
-						player.inventory.getCurrentItem().setItemDamage((int) (player.inventory.getCurrentItem().getItemDamage() - (Ability.BLOODTHIRST.getLevel(nbt)*2+1)));
+						player.inventory.getCurrentItem().setItemDamage((int) (player.inventory.getCurrentItem().getItemDamage() - (Ability.ETHEREAL.getLevel(nbt)*2+1)));
 					}
 					addBonusExperience(event, nbt);
 					updateLevel(player, stack, nbt);
@@ -61,9 +61,9 @@ public class EventLivingDeath
 					
 					if (nbt != null)
 					{
-						if (Ability.BLOODTHIRST.hasAbility(nbt))
+						if (Ability.ETHEREAL.hasAbility(nbt))
 						{
-							player.inventory.getCurrentItem().setItemDamage((int) (player.inventory.getCurrentItem().getItemDamage() - (Ability.BLOODTHIRST.getLevel(nbt)*2+1)));
+							player.inventory.getCurrentItem().setItemDamage((int) (player.inventory.getCurrentItem().getItemDamage() - (Ability.ETHEREAL.getLevel(nbt)*2+1)));
 						}
 						addBonusExperience(event, nbt);
 						updateLevel(player, stack, nbt);
