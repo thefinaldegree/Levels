@@ -89,14 +89,14 @@ public class Config
 	 * RARITIES
 	 */
 	
-	public static double commonChance = 0.5D;
+	public static double basicChance = 0.5D;
 	public static double uncommonChance = 0.2D;
 	public static double rareChance = 0.12D;
 	public static double ultraRareChance = 0.06D;
 	public static double legendaryChance = 0.03D;
 	public static double archaicChance = 0.01D;
 	
-	public static double commonDamage = 0;
+	public static double basicDamage = 0;
 	public static double uncommonDamage = 0.3D;
 	public static double rareDamage = 0.7D;
 	public static double ultraRareDamage = 1.0D;
@@ -370,9 +370,9 @@ public class Config
 		/*
 		 * Chances 
 		 */
-		prop = rarities.get(category, "commonChance", commonChance);
+		prop = rarities.get(category, "basicChance", basicChance);
 		prop.setComment("Sets the chance the given rarity will be applied. Default: 0.5");
-		commonChance = prop.getDouble();
+		basicChance = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "uncommonChance", uncommonChance);
@@ -403,9 +403,9 @@ public class Config
 		/*
 		 * Damage Multipliers
 		 */
-		prop = rarities.get(category, "commonDamage", commonDamage);
+		prop = rarities.get(category, "basicDamage", basicDamage);
 		prop.setComment("Sets the damage multiplier for the given rarity. Default: 0");
-		commonDamage = prop.getDouble();
+		basicDamage = prop.getDouble();
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "uncommonDamage", uncommonDamage);

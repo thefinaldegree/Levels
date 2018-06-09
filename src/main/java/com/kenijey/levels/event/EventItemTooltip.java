@@ -146,9 +146,9 @@ public class EventItemTooltip
 			
 			switch (rarity)
 			{
-				case COMMON:
-					int commonD = (int) (Config.commonDamage * (damage + 1F));
-					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (+" + commonD + ")");
+				case BASIC:
+					int basicD = (int) (Config.basicDamage * (damage + 1F));
+					tooltip.set(tooltip.indexOf("When in main hand:") + 2, tooltip.get(tooltip.indexOf("When in main hand:") + 2) + rarity.getColor() + " (+" + basicD + ")");
 					break;
 				case UNCOMMON:
 					int uncommonD = (int) (Config.uncommonDamage * (damage + 1F));
