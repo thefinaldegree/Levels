@@ -46,6 +46,12 @@ public class Experience
 		}
 	}
 	
+	public static int getNeededExpForNextLevel(NBTTagCompound nbt)
+	{
+		int neededexp = Experience.getMaxLevelExp(Experience.getLevel(nbt)) - Experience.getExperience(nbt);
+		return nbt != null ? neededexp : 0;
+	}
+	
 	public static int getExperience(NBTTagCompound nbt)
 	{
 		return nbt != null ? nbt.getInteger("EXPERIENCE") : 0;
