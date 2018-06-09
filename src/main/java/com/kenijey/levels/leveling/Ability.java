@@ -155,7 +155,7 @@ public enum Ability
 	
 	public String getName()
 	{
-		return I18n.format("levels.ability." + this.ordinal());
+		return this.toString();
 	}
 	
 	public String getName(NBTTagCompound nbt)
