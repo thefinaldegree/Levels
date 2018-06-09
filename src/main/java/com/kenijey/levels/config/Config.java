@@ -42,8 +42,6 @@ public class Config
 	/*
 	 * ABILITIES
 	 */
-
-	public static int maxAbilities = 3;
 	
 	// abilities
 	public static boolean fire = true;
@@ -185,11 +183,6 @@ public class Config
 		String category = "abilities";
 		List<String> propOrder = Lists.newArrayList();
 		Property prop;
-
-		prop = abilities.get(category, "maxAbilitiesPerItem", maxAbilities);
-		prop.setComment("Sets the maximum amount of weapons that can be applied on a given item. Default: 3");
-		maxAbilities = prop.getInt();
-		propOrder.add(prop.getName());
 		
 		/*
 		 * Abilities
