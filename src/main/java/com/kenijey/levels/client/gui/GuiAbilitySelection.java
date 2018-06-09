@@ -292,11 +292,6 @@ public class GuiAbilitySelection extends GuiScreen
 							buttons[i].enabled = false;
 					}
 				}
-				
-				if (abilities.get(i).hasAbility(nbt) && abilities.get(i).getType().equals("passive"))
-				{
-					buttons[i].enabled = false;
-				}
 			}
 		}
 	}

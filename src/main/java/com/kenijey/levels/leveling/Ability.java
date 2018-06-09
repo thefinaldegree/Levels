@@ -119,15 +119,10 @@ public enum Ability
 	
 	public boolean canUpgradeLevel(NBTTagCompound nbt)
 	{
-		if (getType().equals("active"))
-		{
 			if (getLevel(nbt) < 3)
 				return true;
 			else
 				return false;
-		}
-		else
-			return false;
 	}
 	
 	public double getMultiplier(int level)
