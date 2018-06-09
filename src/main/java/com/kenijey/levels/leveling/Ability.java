@@ -175,6 +175,11 @@ public enum Ability
 		return type;
 	}
 	
+	public String getTypeName()
+	{
+		return I18n.format("levels.ability.type." + type.toString()); 
+	}
+	
 	public String getCategory()
 	{
 		return category;

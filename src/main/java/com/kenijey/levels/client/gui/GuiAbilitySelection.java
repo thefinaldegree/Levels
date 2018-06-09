@@ -310,7 +310,7 @@ public class GuiAbilitySelection extends GuiScreen
 			if (checker.checkHover(mouseX, mouseY))
 			{
 				List<String> list = new ArrayList<String>();
-				list.add(abilities.get(i).getColor() + abilities.get(i).getName() + " (" + abilities.get(i).getType() + ")");
+				list.add(abilities.get(i).getColor() + abilities.get(i).getName() + " (" + abilities.get(i).getTypeName() + ")");
 				list.add("");
 				list.add(I18n.format("levels.abilities.info." + abilities.get(i).getName()));
 				list.add("");

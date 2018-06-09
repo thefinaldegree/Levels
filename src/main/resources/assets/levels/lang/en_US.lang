@@ -55,6 +55,8 @@ levels.misc.abilities.tokens=Ability Tokens
 levels.misc.abilities.purchased=Purchased Abilities
 levels.misc.abilities.active=Active
 levels.misc.abilities.passive=Passive
+levels.ability.type.active=Active
+levels.ability.type.passive=Passive
 
 levels.update=Weapon Levels has a new versions available!
 levels.login1=Press 'L' with a weapon/armor in hand to get started!
