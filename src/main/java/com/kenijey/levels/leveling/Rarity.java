@@ -73,7 +73,7 @@ public enum Rarity
 
 	public String getName()
 	{
-		return I18n.format("levels.rarity." + this.ordinal());
+		return this.toString();
 	}
 	
 	public String getColor()
