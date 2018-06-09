@@ -40,7 +40,7 @@ levels.abilities.info.BLOODTHIRST=Heals the user back a portion of the damage de
 levels.abilities.info.MOLTEN=Sets enemies on fire for a short time.
 levels.abilities.info.FROZEN=Stuns enemies, freezing them in place for a short time.
 levels.abilities.info.TOXIC=Poisons enemies for a short time.
-levels.abilities.info.ABSORB=Player regenerates health faster for a short time.
+levels.abilities.info.ABSORB=Player regenerates health fast for a short time.
 levels.abilities.info.BEASTIAL=At low health, the player receives a damage buff.
 levels.abilities.info.HARDENED=A small chance at negating all of the damage to be dealt.
 
