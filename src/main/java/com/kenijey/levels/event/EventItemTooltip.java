@@ -74,7 +74,7 @@ public class EventItemTooltip
 					tooltip.add("");
 					
 					// rarity
-					tooltip.add(rarity.getColor() + TextFormatting.ITALIC + I18n.format("levels.rarity." + rarity.ordinal()));
+					tooltip.add(rarity.getColor() + TextFormatting.ITALIC + I18n.format("levels.rarity." + rarity.getName()));
 					
 					// level
 					if (level >= Config.maxLevel)
