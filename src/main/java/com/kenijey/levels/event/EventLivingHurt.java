@@ -297,8 +297,11 @@ public class EventLivingHurt
 			
 			if (Ability.ETHEREAL.hasAbility(nbt))
 			{
-				float health = (float) (player.getHealth() + (event.getAmount() / 2));
-				player.setHealth(health);
+				float addition =(float)(event.getAmount() * (Ability.ETHEREAL.getLevel(nbt) * 12) / 100);
+				player.setHealth(player.getHealth()+addition);
+				System.out.println("ethereal level: " + Ability.ETHEREAL.getLevel(nbt));
+				System.out.println("damage dealt: " + event.getAmount());
+				System.out.println("health added: " + addition);
 			}
 		}
 	}
