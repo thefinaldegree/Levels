@@ -50,7 +50,7 @@ public class Config
 	public static boolean frost = true;
 	public static boolean poison = true;
 	public static boolean innate = true;
-	public static boolean chained = true;
+	public static boolean bombastic = true;
 	public static boolean voida = true;
 	public static boolean illumination = true;
 	public static boolean ethereal = true;
@@ -71,7 +71,7 @@ public class Config
 	public static int frostchance = 4;
 	public static int poisonchance = 4;
 	public static int innatechance = 7;
-	public static int chainedchance = 10;
+	public static int bombasticchance = 10;
 	public static int voidachance = 20;
 	public static int illuminationchance = 7;
 	public static int etherealchance = 7;
@@ -215,9 +215,9 @@ public class Config
 		innate = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
-		prop = abilities.get(category, "chainedAbility", chained);
+		prop = abilities.get(category, "bombasticAbility", bombastic);
 		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
-		chained = prop.getBoolean();
+		bombastic = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
 		prop = abilities.get(category, "voidAbility", voida);
@@ -306,9 +306,9 @@ public class Config
 		innatechance = prop.getInt();
 		propOrder.add(prop.getName());
 		
-		prop = abilitychances.get(category, "chainedchance", chainedchance);
-		prop.setComment("Determines how rare the Chained ability will occur. (Higher values=lower occurance) Default: 10");
-		chainedchance = prop.getInt();
+		prop = abilitychances.get(category, "bombasticchance", bombasticchance);
+		prop.setComment("Determines how rare the Bombastic ability will occur. (Higher values=lower occurance) Default: 10");
+		bombasticchance = prop.getInt();
 		propOrder.add(prop.getName());
 		
 		prop = abilitychances.get(category, "voidachance", voidachance);
