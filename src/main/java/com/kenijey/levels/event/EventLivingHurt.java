@@ -25,7 +25,6 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.launchwrapper.Launch;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
@@ -268,21 +267,14 @@ public class EventLivingHurt
 
 			if (Ability.BOMBASTIC.hasAbility(nbt) && (int) (Math.random() * Config.bombasticchance) == 0)
 			{
-				double multiplier = Ability.BOMBASTIC.getMultiplier(Ability.BOMBASTIC.getLevel(nbt));
-				double radius = 10 * multiplier;
+				double multiplierD = Ability.BOMBASTIC.getMultiplier(Ability.BOMBASTIC.getLevel(nbt));
+				float multiplier = (float)multiplierD;
 				World world = enemy.getEntityWorld();
-				List<EntityMob> entityList = world.getEntitiesWithinAABB(EntityMob.class, new AxisAlignedBB(player.posX - radius, player.posY - radius, player.posZ - radius, player.posX + radius, player.posY + radius, player.posZ + radius));
-				Iterator<EntityMob> iterator = entityList.iterator();
-				
-				while (iterator.hasNext())
-				{
-                    Entity entity = (Entity) iterator.next();
 					
-					if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer) && !(entity instanceof EntityAnimal))
+					if (enemy instanceof EntityLivingBase && !(enemy instanceof EntityAnimal))
 					{
-						entity.attackEntityFrom(DamageSource.causePlayerDamage(player), event.getAmount());
+						world.createExplosion(enemy, enemy.lastTickPosX, enemy.lastTickPosY, enemy.lastTickPosZ, multiplier, true);
 					}
-				}
 			}
 			
 			if (Ability.VOID.hasAbility(nbt) && (int) (Math.random() * Config.voidachance) == 0)
@@ -371,7 +363,6 @@ public class EventLivingHurt
 	{
 		int level = Experience.getNextLevel(player, stack, nbt, Experience.getLevel(nbt), Experience.getExperience(nbt));
 		Experience.setLevel(nbt, level);
-		
 		NBTHelper.saveStackNBT(stack, nbt);
 	}
 }
