@@ -293,7 +293,6 @@ public class EventLivingHurt
 			if (Ability.ILLUMINATION.hasAbility(nbt) && (int) (Math.random() * Config.illuminationchance) == 0)
 			{
 				enemy.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, (int) (20 * 6), Ability.ILLUMINATION.getLevel(nbt)));
-				enemy.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, (int) (20 * 6), Ability.ILLUMINATION.getLevel(nbt)));
 			}
 			
 			if (Ability.ETHEREAL.hasAbility(nbt) && (int) (Math.random() * Config.etherealchance) == 0)
