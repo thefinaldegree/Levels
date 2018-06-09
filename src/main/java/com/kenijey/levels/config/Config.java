@@ -71,8 +71,6 @@ public class Config
 	public static int innatechance = 7;
 	public static int bombasticchance = 10;
 	public static int voidachance = 20;
-	public static int illuminationchance = 7;
-	public static int etherealchance = 7;
 	//armor
 	public static int moltenchance = 4;
 	public static int frozenchance = 4;
@@ -307,16 +305,6 @@ public class Config
 		prop = abilitychances.get(category, "voidachance", voidachance);
 		prop.setComment("Determines how rare the Void ability will occur. (Higher values=lower occurance) Default: 20");
 		voidachance = prop.getInt();
-		propOrder.add(prop.getName());
-		
-		prop = abilitychances.get(category, "illuminationchance", illuminationchance);
-		prop.setComment("Determines how rare the Illumination ability will occur. (Higher values=lower occurance) Default: 7");
-		illuminationchance = prop.getInt();
-		propOrder.add(prop.getName());
-		
-		prop = abilitychances.get(category, "etherealchance", etherealchance);
-		prop.setComment("Determines how rare the Ethereal ability will occur. (Higher values=lower occurance) Default: 7");
-		etherealchance = prop.getInt();
 		propOrder.add(prop.getName());
 		
 		prop = abilitychances.get(category, "moltenchance", moltenchance);

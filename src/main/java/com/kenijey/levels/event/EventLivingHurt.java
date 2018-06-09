@@ -290,12 +290,12 @@ public class EventLivingHurt
 			}
 			
 			// passive
-			if (Ability.ILLUMINATION.hasAbility(nbt) && (int) (Math.random() * Config.illuminationchance) == 0)
+			if (Ability.ILLUMINATION.hasAbility(nbt))
 			{
 				enemy.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, (int) (20 * 6), Ability.ILLUMINATION.getLevel(nbt)));
 			}
 			
-			if (Ability.ETHEREAL.hasAbility(nbt) && (int) (Math.random() * Config.etherealchance) == 0)
+			if (Ability.ETHEREAL.hasAbility(nbt))
 			{
 				float health = (float) (player.getHealth() + (event.getAmount() / 2));
 				player.setHealth(health);
