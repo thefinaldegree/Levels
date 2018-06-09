@@ -59,7 +59,6 @@ public class Config
 	public static boolean toxic = true;
 	public static boolean absorb = true;
 	public static boolean beastial = true;
-	public static boolean enlightened = true;
 	public static boolean hardened = true;
 	
 	//ABILITY CHANCES
@@ -76,7 +75,6 @@ public class Config
 	public static int frozenchance = 4;
 	public static int toxicchance = 4;
 	public static int absorbchance = 7;
-	public static int enlightenedchance = 7;
 	public static int hardenedchance = 10;
 	
 	
@@ -257,11 +255,6 @@ public class Config
 		beastial = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
-		prop = abilities.get(category, "enlightenedAbility", enlightened);
-		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
-		enlightened = prop.getBoolean();
-		propOrder.add(prop.getName());
-		
 		prop = abilities.get(category, "hardenedAbility", hardened);
 		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
 		hardened = prop.getBoolean();
@@ -325,11 +318,6 @@ public class Config
 		prop = abilitychances.get(category, "absorbchance", absorbchance);
 		prop.setComment("Determines how rare the Absorb ability will occur. (Higher values=lower occurance) Default: 7");
 		absorbchance = prop.getInt();
-		propOrder.add(prop.getName());
-		
-		prop = abilitychances.get(category, "enlightenedchance", enlightenedchance);
-		prop.setComment("Determines how rare the Enlightened ability will occur. (Higher values=lower occurance) Default: 7");
-		enlightenedchance = prop.getInt();
 		propOrder.add(prop.getName());
 		
 		prop = abilitychances.get(category, "hardenedchance", hardenedchance);

@@ -23,7 +23,6 @@ levels.ability.FROZEN=Frozen
 levels.ability.TOXIC=Toxic
 levels.ability.ABSORB=Absorb
 levels.ability.BEASTIAL=Beastial
-levels.ability.ENLIGHTENED=Enlightened
 levels.ability.HARDENED=Hardened
 
 levels.ability.type.active=Active
@@ -43,7 +42,6 @@ levels.abilities.info.FROZEN=Stuns enemies, freezing them in place for a short t
 levels.abilities.info.TOXIC=Poisons enemies for a short time.
 levels.abilities.info.ABSORB=Player regenerates health faster for a short time.
 levels.abilities.info.BEASTIAL=At low health, the player receives a damage buff.
-levels.abilities.info.ENLIGHTENED=Heals the player a portion of the damage dealt.
 levels.abilities.info.HARDENED=A small chance at negating all of the damage to be dealt.
 
 levels.misc.level=Level

@@ -17,27 +17,26 @@ public enum Ability
 {
 	// weapon abilities (type, color, color code, tier, multiplier)
 	// active
-	FIRE("weapon", "active", Config.fire, TextFormatting.RED, 0xFF5555, 1, 1.5),
-	FROST("weapon", "active", Config.frost, TextFormatting.AQUA, 0x55FFFF, 1, 1.5),
-	POISON("weapon", "active", Config.poison, TextFormatting.DARK_GREEN, 0x00AA00, 1, 1.5),
-	INNATE("weapon", "active", Config.innate, TextFormatting.DARK_RED, 0xAA0000, 2, 1.5),
-	BOMBASTIC("weapon", "active", Config.bombastic, TextFormatting.GRAY, 0xAAAAAA, 3, 1.5),
-	VOID("weapon", "active", Config.voida, TextFormatting.DARK_GRAY, 0x555555, 3, 1),
+	FIRE("weapon", "active", Config.fire, TextFormatting.RED, 0xFF5555, 1),
+	FROST("weapon", "active", Config.frost, TextFormatting.AQUA, 0x55FFFF, 1),
+	POISON("weapon", "active", Config.poison, TextFormatting.DARK_GREEN, 0x00AA00, 1),
+	INNATE("weapon", "active", Config.innate, TextFormatting.DARK_RED, 0xAA0000, 2),
+	BOMBASTIC("weapon", "active", Config.bombastic, TextFormatting.GRAY, 0xAAAAAA, 3),
+	VOID("weapon", "active", Config.voida, TextFormatting.DARK_GRAY, 0x555555, 3),
 	// passive
-	ILLUMINATION("weapon", "passive", Config.illumination, TextFormatting.YELLOW, 0xFFFF55, 2, 1),
-	ETHEREAL("weapon", "passive", Config.ethereal, TextFormatting.GREEN, 0x55FF55, 2, 2),
-	BLOODTHIRST("weapon", "passive", Config.bloodthirst, TextFormatting.DARK_PURPLE, 0xAA00AA, 3, 2),
+	ILLUMINATION("weapon", "passive", Config.illumination, TextFormatting.YELLOW, 0xFFFF55, 2),
+	ETHEREAL("weapon", "passive", Config.ethereal, TextFormatting.GREEN, 0x55FF55, 2),
+	BLOODTHIRST("weapon", "passive", Config.bloodthirst, TextFormatting.DARK_PURPLE, 0xAA00AA, 3),
 	
 	// armor abilities
 	// active
-	MOLTEN("armor", "active", Config.molten, TextFormatting.RED, 0xFF5555, 1, 1.5),
-	FROZEN("armor", "active", Config.frozen, TextFormatting.AQUA, 0x55FFFF, 1, 1.5),
-	TOXIC("armor", "active", Config.toxic, TextFormatting.DARK_GREEN, 0x00AA00, 1, 1.5),
-	ABSORB("armor", "active", Config.absorb, TextFormatting.GREEN, 0x55FF55, 2, 1.5),
+	MOLTEN("armor", "active", Config.molten, TextFormatting.RED, 0xFF5555, 2),
+	FROZEN("armor", "active", Config.frozen, TextFormatting.AQUA, 0x55FFFF, 2),
+	TOXIC("armor", "active", Config.toxic, TextFormatting.DARK_GREEN, 0x00AA00, 2),
+	ABSORB("armor", "active", Config.absorb, TextFormatting.GREEN, 0x55FF55, 3),
 	// passive
-	BEASTIAL("armor", "passive", Config.beastial, TextFormatting.DARK_RED, 0xAA0000, 1, 1.5),
-	ENLIGHTENED("armor", "passive", Config.enlightened, TextFormatting.YELLOW, 0xFFFF55, 2, 2),
-	HARDENED("armor", "passive", Config.hardened, TextFormatting.GRAY, 0xAAAAAA, 2, 1);
+	BEASTIAL("armor", "passive", Config.beastial, TextFormatting.DARK_RED, 0xAA0000, 2),
+	HARDENED("armor", "passive", Config.hardened, TextFormatting.GRAY, 0xAAAAAA, 3);
 	
 	public static int WEAPON_ABILITIES;
 	public static int ARMOR_ABILITIES;
@@ -50,9 +49,8 @@ public enum Ability
 	private String color;
 	private int hex;
 	private int tier;
-	private double multiplier;
 	
-	Ability(String category, String type, boolean enabled, Object color, int hex, int tier, double multiplier)
+	Ability(String category, String type, boolean enabled, Object color, int hex, int tier)
 	{
 		this.category = category;
 		this.type = type;
@@ -60,7 +58,6 @@ public enum Ability
 		this.color = color.toString();
 		this.hex = hex;
 		this.tier = tier;
-		this.multiplier = multiplier;
 	}
 	
 	/**
@@ -123,14 +120,6 @@ public enum Ability
 				return true;
 			else
 				return false;
-	}
-	
-	public double getMultiplier(int level)
-	{
-		if (level == 1) return 1;
-		else if (level == 2) return multiplier;
-		else if (level == 3) return multiplier + (multiplier / 2);
-		else return 1;
 	}
 	
 	public int getTier()
