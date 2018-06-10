@@ -30,9 +30,9 @@ public enum Ability
 	
 		// armor
 	// active
-	MOLTEN("armor", "active", Config.molten, TextFormatting.RED, 0xFF5555, 2, 3),
-	FROZEN("armor", "active", Config.frozen, TextFormatting.AQUA, 0x55FFFF, 2, 3),
-	TOXIC("armor", "active", Config.toxic, TextFormatting.DARK_GREEN, 0x00AA00, 2, 3),
+	MOLTEN("armor", "active", Config.molten, TextFormatting.RED, 0xFF5555, 2, 2),
+	FROZEN("armor", "active", Config.frozen, TextFormatting.AQUA, 0x55FFFF, 2, 2),
+	TOXIC("armor", "active", Config.toxic, TextFormatting.DARK_GREEN, 0x00AA00, 2, 2),
 	ABSORB("armor", "active", Config.absorb, TextFormatting.GREEN, 0x55FF55, 3, 1),
 	// passive
 	BEASTIAL("armor", "passive", Config.beastial, TextFormatting.DARK_RED, 0xAA0000, 2, 1),
