@@ -32,7 +32,7 @@ public class Config
 	public static int maxLevel = 10;
 	public static int level1Exp = 40;
 	public static double expExponent = 2.4D;
-	public static int expMultiplier = 20;
+	public static int expMultiplier = 10;
 	
 	// misc
 	public static boolean showDurability = true;
@@ -148,7 +148,7 @@ public class Config
 		propOrder.add(prop.getName());
 		
 		prop = main.get(category, "experienceMultiplier", expMultiplier);
-		prop.setComment("Sets the multiplier of the experience algorithm: Default: 20");
+		prop.setComment("Sets the multiplier of the experience algorithm: Default: 10");
 		expMultiplier = prop.getInt();
 		propOrder.add(prop.getName());
 		
