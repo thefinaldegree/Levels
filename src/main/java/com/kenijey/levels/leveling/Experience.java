@@ -35,6 +35,11 @@ public class Experience
 		return nbt != null ? Math.max(nbt.getInteger("LEVEL"), 1) : 1;
 	}
 	
+	public static boolean canLevelUp(NBTTagCompound nbt)
+	{
+		return getLevel(nbt) < Config.maxLevel;
+	}
+	
 	public static void setLevel(NBTTagCompound nbt, int level)
 	{
 		if (nbt != null)

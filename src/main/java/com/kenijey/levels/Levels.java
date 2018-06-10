@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.kenijey.levels.capabilities.CapabilityEnemyLevel;
+import com.kenijey.levels.commands.WPCommandExpLevel;
 import com.kenijey.levels.commands.WPCommandRarity;
 import com.kenijey.levels.config.Config;
 import com.kenijey.levels.init.ModEvents;
@@ -85,5 +86,6 @@ public class Levels
 	public static void serverInit(FMLServerStartingEvent event)
 	{
 		event.registerServerCommand(new WPCommandRarity());
+		event.registerServerCommand(new WPCommandExpLevel());
 	}
 }
