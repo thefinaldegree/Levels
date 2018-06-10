@@ -24,6 +24,7 @@ import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.client.config.HoverChecker;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -63,11 +64,11 @@ public class GuiAbilitySelection extends GuiScreen
 		    			{
 		    				if (Ability.WEAPONS.get(i).getType().equals("active"))
 			    			{
-		    					weaponAbilities[i] = new GuiButton(i, width / 2 - 215, 100 + (i * 20), 100, 20, I18n.format("levels.ability." + Ability.WEAPONS.get(i).getName()) + " (" + Ability.WEAPONS.get(i).getTier() + ")");
+		    					weaponAbilities[i] = new GuiButton(i, width / 2 - 215, 100 + (i * 21), 100, 20, I18n.format("levels.ability." + Ability.WEAPONS.get(i).getName()) + " (" + Ability.WEAPONS.get(i).getTier() + ")");
 		    					j++;
 			    			}
 		    				else
-			    				weaponAbilities[i] = new GuiButton(i, width / 2 - 100, 100 + ((i - j) * 20), 105, 20, I18n.format("levels.ability." + Ability.WEAPONS.get(i).getName()) + " (" + Ability.WEAPONS.get(i).getTier() + ")");
+			    				weaponAbilities[i] = new GuiButton(i, width / 2 - 100, 100 + ((i - j) * 21), 105, 20, I18n.format("levels.ability." + Ability.WEAPONS.get(i).getName()) + " (" + Ability.WEAPONS.get(i).getTier() + ")");
 		    				
 		    				this.buttonList.add(weaponAbilities[i]);
 		    				weaponAbilities[i].enabled = false;
@@ -87,11 +88,11 @@ public class GuiAbilitySelection extends GuiScreen
 		    			{
 		    				if (Ability.ARMOR.get(i).getType().equals("active"))
 			    			{
-		    					armorAbilities[i] = new GuiButton(i, width / 2 - 215, 100 + (i * 20), 100, 20, I18n.format("levels.ability." + Ability.ARMOR.get(i).getName()) + " (" + Ability.ARMOR.get(i).getTier() + ")");
+		    					armorAbilities[i] = new GuiButton(i, width / 2 - 215, 100 + (i * 21), 100, 20, I18n.format("levels.ability." + Ability.ARMOR.get(i).getName()) + " (" + Ability.ARMOR.get(i).getTier() + ")");
 		    					j++;
 			    			}
 		    				else
-		    					armorAbilities[i] = new GuiButton(i, width / 2 - 100, 100 + ((i - j) * 20), 105, 20, I18n.format("levels.ability." + Ability.ARMOR.get(i).getName()) + " (" + Ability.ARMOR.get(i).getTier() + ")");
+		    					armorAbilities[i] = new GuiButton(i, width / 2 - 100, 100 + ((i - j) * 21), 105, 20, I18n.format("levels.ability." + Ability.ARMOR.get(i).getName()) + " (" + Ability.ARMOR.get(i).getTier() + ")");
 		    				
 		    				this.buttonList.add(armorAbilities[i]);
 		    				armorAbilities[i].enabled = false;
@@ -298,6 +299,10 @@ public class GuiAbilitySelection extends GuiScreen
 	
 	private void drawTooltips(GuiButton[] buttons, ArrayList<Ability> abilities, int mouseX, int mouseY)
 	{
+		EntityPlayer player = this.mc.player;
+		ItemStack stack = player.inventory.getCurrentItem();
+		NBTTagCompound nbt = stack.getTagCompound();
+		
 		for (int i = 0; i < buttons.length; i++)
 		{
 			HoverChecker checker = new HoverChecker(buttons[i], 0);
@@ -309,6 +314,430 @@ public class GuiAbilitySelection extends GuiScreen
 				list.add("");
 				list.add(I18n.format("levels.abilities.info." + abilities.get(i).getName()));
 				list.add("");
+				if (stack.getItem() instanceof ItemSword ||stack.getItem() instanceof ItemAxe || stack.getItem() instanceof ItemHoe || stack.getItem() instanceof ItemBow)
+				{
+						if (i == 0)//FIRE
+						{
+							float chance = (float) (1.0 / (Config.firechance))*100;
+							float currentduration = (Ability.FIRE.getLevel(nbt) + Ability.FIRE.getLevel(nbt)*4)/4;
+							float nextlevelduration = (Ability.FIRE.getLevel(nbt)+1 + (Ability.FIRE.getLevel(nbt)+1)*4)/4;
+							int c = (int) chance;
+							
+							if (!(Ability.FIRE.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+								list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + c);
+								list.add(I18n.format("levels.abilities.info.duration")+": 0 " + I18n.format("levels.abilities.info.seconds")+ TextFormatting.GREEN + " +" + nextlevelduration);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration + " " + I18n.format("levels.abilities.info.seconds") + TextFormatting.GREEN + " + " + (nextlevelduration-currentduration));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration +" "+ I18n.format("levels.abilities.info.seconds"));
+									if(!(Ability.FIRE.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 1)//FROST
+						{
+							float chance = (float) (1.0 / (Config.frostchance))*100;
+							float currentduration = (Ability.FROST.getLevel(nbt) + Ability.FROST.getLevel(nbt)*4)/3;
+							float nextlevelduration = (Ability.FROST.getLevel(nbt)+1 + (Ability.FROST.getLevel(nbt)+1)*4)/3;
+							int c = (int) chance;
+							
+							if (!(Ability.FROST.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": 0 " + I18n.format("levels.abilities.info.seconds")+ TextFormatting.GREEN + " +" + nextlevelduration);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration + " " + I18n.format("levels.abilities.info.seconds") + TextFormatting.GREEN + " + " + (nextlevelduration-currentduration));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration +" "+ I18n.format("levels.abilities.info.seconds"));
+									if(!(Ability.FROST.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 2)//POISON
+						{
+							float chance = (float) (1.0 / (Config.poisonchance))*100;
+							float currentduration = (Ability.POISON.getLevel(nbt) + Ability.POISON.getLevel(nbt)*4)/2;
+							float nextlevelduration = (Ability.POISON.getLevel(nbt)+1 + (Ability.POISON.getLevel(nbt)+1)*4)/2;
+							int c = (int) chance;
+							
+							if (!(Ability.POISON.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": 0 " + I18n.format("levels.abilities.info.seconds")+ TextFormatting.GREEN + " +" + nextlevelduration);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration + " " + I18n.format("levels.abilities.info.seconds") + TextFormatting.GREEN + " + " + (nextlevelduration-currentduration));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration +" "+ I18n.format("levels.abilities.info.seconds"));
+									if(!(Ability.POISON.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 3)//INNATE
+						{
+							float chance = (float) ((1.0 / (Config.innatechance))*100);
+							float currentduration = (Ability.INNATE.getLevel(nbt) + Ability.INNATE.getLevel(nbt)*4)/3;
+							float nextlevelduration = (Ability.INNATE.getLevel(nbt)+1 + (Ability.INNATE.getLevel(nbt)+1)*4)/3;
+							float currentbleedingspeed = (Ability.INNATE.getLevel(nbt));
+							float nextlevelbleedingspeed = (Ability.INNATE.getLevel(nbt)+1);
+							int c = (int) chance;
+							
+							if (!(Ability.INNATE.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": 0 " + I18n.format("levels.abilities.info.seconds")+ TextFormatting.GREEN + " +" + nextlevelduration);
+									list.add(I18n.format("levels.abilities.info.bleedingspeed")+": 0 "+ TextFormatting.GREEN + "+" + nextlevelbleedingspeed);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration + " " + I18n.format("levels.abilities.info.seconds") + TextFormatting.GREEN + " + " + (nextlevelduration-currentduration));
+									list.add(I18n.format("levels.abilities.info.bleedingspeed")+": "+ currentbleedingspeed + " " + TextFormatting.GREEN + "+" + (nextlevelbleedingspeed-currentbleedingspeed));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration +" "+ I18n.format("levels.abilities.info.seconds"));
+									list.add(I18n.format("levels.abilities.info.bleedingspeed")+": " + currentbleedingspeed);
+									if(!(Ability.INNATE.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 4)//BOMBASTIC
+						{
+							float chance = (float) ((1.0 / (Config.bombasticchance))*100);
+							float currentexplosionintensity = (Ability.BOMBASTIC.getLevel(nbt));
+							float nextlevelexplosionintensity = (Ability.BOMBASTIC.getLevel(nbt)+1);
+							int c = (int) chance;
+							
+							if (!(Ability.BOMBASTIC.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + c);
+									list.add(I18n.format("levels.abilities.info.explosionintensity")+": 0 "+ TextFormatting.GREEN + "+" + nextlevelexplosionintensity);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.explosionintensity")+": "+ currentexplosionintensity + " " + TextFormatting.GREEN + "+" + (nextlevelexplosionintensity-currentexplosionintensity));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.explosionintensity")+": "+ currentexplosionintensity);
+									if(!(Ability.BOMBASTIC.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 5)//VOID
+						{
+							float chance = (float) ((1.0 / (Config.voidachance))*100);
+							float currentdamage = (Ability.VOID.getLevel(nbt)*21);
+							float nextleveldamage = ((Ability.VOID.getLevel(nbt)+1)*21);
+							int c = (int) chance;
+							
+							if (!(Ability.VOID.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + c);
+									list.add(I18n.format("levels.abilities.info.damagepercentage")+": %0"+ TextFormatting.GREEN + " + %" + nextleveldamage);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.damagepercentage")+": %"+ currentdamage + " " + TextFormatting.GREEN + "+ %" + (nextleveldamage-currentdamage));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.damagepercentage")+": %"+ currentdamage);
+									if(!(Ability.VOID.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 6)//ILLUMINATION
+						{
+							if (!(Ability.ILLUMINATION.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.duration")+": 0 " + I18n.format("levels.abilities.info.seconds")+ TextFormatting.GREEN + " +" + 6.0);
+								}
+							}
+							else
+							{
+									list.add(I18n.format("levels.abilities.info.duration") + ": " + 6.0 + " " + I18n.format("levels.abilities.info.seconds"));
+							}
+							if(!(Ability.ILLUMINATION.canUpgradeLevel(nbt)) && (!(buttons[i].enabled)))
+									list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+						}
+						if (i == 7)//ETHEREAL
+						{
+							float currentrepair = (Ability.ETHEREAL.getLevel(nbt)*2+1);
+							float nextlevelrepair = ((Ability.ETHEREAL.getLevel(nbt)+1)*2+1);
+							
+							if (!(Ability.ETHEREAL.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.durability")+": 0" + TextFormatting.GREEN + " +" + 3.0 + " " );
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.durability")+": "+ currentrepair + " " + TextFormatting.GREEN + "+ " + (nextlevelrepair-currentrepair));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.durability")+": "+ currentrepair);
+									if(!(Ability.ETHEREAL.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 8)//BLOODTHIRST
+						{
+							float currentpercentage =(float) (Ability.BLOODTHIRST.getLevel(nbt) * 12);
+							float nextlevelpercentage =(float) ((Ability.BLOODTHIRST.getLevel(nbt)+1) * 12);
+							
+							if (!(Ability.BLOODTHIRST.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+								list.add(I18n.format("levels.abilities.info.damagepercentage")+": %0"+ TextFormatting.GREEN + " + %" + nextlevelpercentage);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.damagepercentage")+": %"+ currentpercentage + " " + TextFormatting.GREEN + "+ %" + (nextlevelpercentage-currentpercentage));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.damagepercentage")+": %"+ currentpercentage);
+									if(!(Ability.BLOODTHIRST.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+				}
+				else if (stack.getItem() instanceof ItemArmor)
+				{		
+						if (i == 0)//MOLTEN
+						{
+							float chance = (float) (1.0 / (Config.moltenchance))*100;
+							float currentduration = (Ability.MOLTEN.getLevel(nbt) + Ability.MOLTEN.getLevel(nbt)*5)/4;
+							float nextlevelduration = (Ability.MOLTEN.getLevel(nbt)+1 + (Ability.MOLTEN.getLevel(nbt)+1)*5)/4;
+							int c = (int) chance;
+							
+							if (!(Ability.MOLTEN.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": 0 " + I18n.format("levels.abilities.info.seconds")+ TextFormatting.GREEN + " +" + nextlevelduration);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration + " " + I18n.format("levels.abilities.info.seconds") + TextFormatting.GREEN + " + " + (nextlevelduration-currentduration));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration +" "+ I18n.format("levels.abilities.info.seconds"));
+									if(!(Ability.MOLTEN.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 1)//FROZEN
+						{
+							float chance = (float) (1.0 / (Config.frozenchance))*100;
+							float currentduration = (Ability.FROZEN.getLevel(nbt) + Ability.FROZEN.getLevel(nbt)*5)/6;
+							float nextlevelduration = (Ability.FROZEN.getLevel(nbt)+1 + (Ability.FROZEN.getLevel(nbt)+1)*5)/6;
+							int c = (int) chance;
+							
+							if (!(Ability.FROZEN.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": 0 " + I18n.format("levels.abilities.info.seconds")+ TextFormatting.GREEN + " +" + nextlevelduration);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration + " " + I18n.format("levels.abilities.info.seconds") + TextFormatting.GREEN + " + " + (nextlevelduration-currentduration));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration +" "+ I18n.format("levels.abilities.info.seconds"));
+									if(!(Ability.FROZEN.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 2)//TOXIC
+						{
+							float chance = (float) (1.0 / (Config.toxicchance))*100;
+							float currentduration = (Ability.TOXIC.getLevel(nbt) + Ability.TOXIC.getLevel(nbt)*4)/4;
+							float nextlevelduration = (Ability.TOXIC.getLevel(nbt)+1 + (Ability.TOXIC.getLevel(nbt)+1)*4)/4;
+							int c = (int) chance;
+							
+							if (!(Ability.TOXIC.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": 0 " + I18n.format("levels.abilities.info.seconds")+ TextFormatting.GREEN + " +" + nextlevelduration);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration + " " + I18n.format("levels.abilities.info.seconds") + TextFormatting.GREEN + " + " + (nextlevelduration-currentduration));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration +" "+ I18n.format("levels.abilities.info.seconds"));
+									if(!(Ability.TOXIC.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 3)//ABSORB
+						{
+							float chance = (float) (1.0 / (Config.absorbchance))*100;
+							float currentduration = (Ability.ABSORB.getLevel(nbt) + Ability.ABSORB.getLevel(nbt)*5)/3;
+							float nextlevelduration = (Ability.ABSORB.getLevel(nbt)+1 + (Ability.ABSORB.getLevel(nbt)+1)*5)/3;
+							int c = (int) chance;
+							
+							if (!(Ability.ABSORB.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": 0 " + I18n.format("levels.abilities.info.seconds")+ TextFormatting.GREEN + " +" + nextlevelduration);
+								}
+							}
+							else
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration + " " + I18n.format("levels.abilities.info.seconds") + TextFormatting.GREEN + " + " + (nextlevelduration-currentduration));
+								}
+								else
+								{
+									list.add(I18n.format("levels.abilities.info.chance") + ": %" + c);
+									list.add(I18n.format("levels.abilities.info.duration")+": " + currentduration +" "+ I18n.format("levels.abilities.info.seconds"));
+									if(!(Ability.ABSORB.canUpgradeLevel(nbt)))
+										list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+								}
+							}
+						}
+						if (i == 4)//BEASTIAL
+						{
+							if (!(Ability.BEASTIAL.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.duration")+": 0 " + I18n.format("levels.abilities.info.seconds")+ TextFormatting.GREEN + " +" + 7.0);
+								}
+							}
+							else
+							{
+									list.add(I18n.format("levels.abilities.info.duration") + ": " + 7.0 + " " + I18n.format("levels.abilities.info.seconds"));
+							}
+							if(!(Ability.BEASTIAL.canUpgradeLevel(nbt)) && (!(buttons[i].enabled)))
+									list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+						}
+						if (i == 5)//HARDENED
+						{
+							float chance = (float) ((1.0 / (Config.hardenedchance))*100);
+							
+							if (!(Ability.HARDENED.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.abilities.info.chance")+": %0"+ TextFormatting.GREEN + " + %" + chance);
+								}
+							}
+							else
+							{
+								list.add(I18n.format("levels.abilities.info.chance")+ ": %" + chance);
+							}
+							if(!(Ability.HARDENED.canUpgradeLevel(nbt)) && (!(buttons[i].enabled)))
+									list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+						}
+				}
+							
 				drawHoveringText(list, mouseX + 3, mouseY + 3);
 			}
 		}
