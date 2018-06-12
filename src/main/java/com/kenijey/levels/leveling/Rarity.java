@@ -5,7 +5,6 @@ import java.util.Random;
 import com.kenijey.levels.config.Config;
 import com.kenijey.levels.util.RandomCollection;
 
-import net.minecraft.client.resources.I18n;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.text.TextFormatting;
 

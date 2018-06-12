@@ -1,17 +1,12 @@
 package com.kenijey.levels.event;
 
-import java.util.Iterator;
-import java.util.List;
-
 import com.kenijey.levels.config.Config;
 import com.kenijey.levels.leveling.Ability;
 import com.kenijey.levels.leveling.Experience;
 import com.kenijey.levels.leveling.Rarity;
 import com.kenijey.levels.util.NBTHelper;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
@@ -25,7 +20,6 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.launchwrapper.Launch;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;

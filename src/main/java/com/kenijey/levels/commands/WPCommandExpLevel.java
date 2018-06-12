@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.google.common.collect.Lists;
 import com.kenijey.levels.leveling.Experience;
-import com.kenijey.levels.leveling.Rarity;
 import com.kenijey.levels.util.NBTHelper;
 
 import net.minecraft.command.CommandBase;
