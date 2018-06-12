@@ -21,7 +21,7 @@ public class EventAchievement
 		{
 			EntityPlayer player = event.getEntityPlayer();
 			
-			player.sendMessage(new TextComponentString(TextFormatting.GOLD + "=========={ Levels 2 }=========="));
+			player.sendMessage(new TextComponentString(TextFormatting.GOLD + "=========={ Weapon Levels}=========="));
 			player.sendMessage(new TextComponentString(""));
 			player.sendMessage(new TextComponentString(TextFormatting.GOLD + "- " + TextFormatting.GRAY + "Press 'L' with a weapon/armor in hand to get started!"));
 			player.sendMessage(new TextComponentString(""));
