@@ -36,6 +36,7 @@ public enum Ability
 	ABSORB("armor", "active", Config.absorb, TextFormatting.GREEN, 0x55FF55, 3, 1),
 	// passive
 	BEASTIAL("armor", "passive", Config.beastial, TextFormatting.DARK_RED, 0xAA0000, 2, 1),
+	REMEDIAL("armor", "passive", Config.remedial, TextFormatting.LIGHT_PURPLE, 0xFF55FF, 2, 2),
 	HARDENED("armor", "passive", Config.hardened, TextFormatting.GRAY, 0xAAAAAA, 3, 1);
 	
 	public static int WEAPON_ABILITIES;

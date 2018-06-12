@@ -59,6 +59,7 @@ public class Config
 	public static boolean toxic = true;
 	public static boolean absorb = true;
 	public static boolean beastial = true;
+	public static boolean remedial = true;
 	public static boolean hardened = true;
 	
 	//ABILITY CHANCES
@@ -253,6 +254,11 @@ public class Config
 		prop = abilities.get(category, "beastialAbility", beastial);
 		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
 		beastial = prop.getBoolean();
+		propOrder.add(prop.getName());
+		
+		prop = abilities.get(category, "remedialAbility", remedial);
+		prop.setComment("Determines whether or not the specific ability will be present in-game. Default: true");
+		remedial = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
 		prop = abilities.get(category, "hardenedAbility", hardened);

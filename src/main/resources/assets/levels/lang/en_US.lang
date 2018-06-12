@@ -23,6 +23,7 @@ levels.ability.FROZEN=Frozen
 levels.ability.TOXIC=Toxic
 levels.ability.ABSORB=Absorb
 levels.ability.BEASTIAL=Beastial
+levels.ability.REMEDIAL=Remedial
 levels.ability.HARDENED=Hardened
 
 levels.ability.type.active=Active
@@ -42,6 +43,7 @@ levels.abilities.info.FROZEN=Stuns enemies, freezing them in place for a short t
 levels.abilities.info.TOXIC=Poisons enemies for a short time.
 levels.abilities.info.ABSORB=Player regenerates health fast for a short time.
 levels.abilities.info.BEASTIAL=At low health, the player receives a damage buff.
+levels.abilities.info.REMEDIAL=Your armor will regenerate your HP every 6 seconds.
 levels.abilities.info.HARDENED=A chance at negating all of the damage to be dealt.
 levels.abilities.info.duration=Duration
 levels.abilities.info.chance=Chance
@@ -51,6 +53,7 @@ levels.abilities.info.explosionintensity=Explosion Intensity
 levels.abilities.info.damagepercentage=Damage Percentage
 levels.abilities.info.durability=Durability
 levels.abilities.info.seconds=seconds
+levels.abilities.info.heal_amount=Heal Amount
 
 levels.misc.level=Level
 levels.misc.max=Max

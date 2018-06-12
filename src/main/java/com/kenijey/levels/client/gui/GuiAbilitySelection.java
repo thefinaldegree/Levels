@@ -718,7 +718,24 @@ public class GuiAbilitySelection extends GuiScreen
 							if(!(Ability.BEASTIAL.canUpgradeLevel(nbt)) && (!(buttons[i].enabled)))
 									list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
 						}
-						if (i == 5)//HARDENED
+						if (i == 5)//REMEDIAL
+						{
+							float heal = (float) Ability.REMEDIAL.getLevel(nbt);
+							if (!(Ability.REMEDIAL.hasAbility(nbt)))
+							{
+								if (buttons[i].enabled)
+								{
+									list.add(I18n.format("levels.ability.info.heal_amount") + ": 0" + TextFormatting.GREEN + "+" + heal);
+								}
+							}
+							else
+							{
+								list.add(I18n.format("levels.ability.info.heal_amount") +": "+ heal);
+							}
+							if(!(Ability.REMEDIAL.canUpgradeLevel(nbt)) && (!(buttons[i].enabled)))
+									list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
+						}
+						if (i == 6)//HARDENED
 						{
 							float chance = (float) ((1.0 / (Config.hardenedchance))*100);
 							
