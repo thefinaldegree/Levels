@@ -725,12 +725,15 @@ public class GuiAbilitySelection extends GuiScreen
 							{
 								if (buttons[i].enabled)
 								{
-									list.add(I18n.format("levels.ability.info.heal_amount") + ": 0" + TextFormatting.GREEN + "+" + heal);
+									list.add(I18n.format("levels.abilities.info.heal_amount") + ": 0 " + TextFormatting.GREEN + "+" + heal);
 								}
 							}
 							else
 							{
-								list.add(I18n.format("levels.ability.info.heal_amount") +": "+ heal);
+								if (buttons[i].enabled)
+									list.add(I18n.format("levels.abilities.info.heal_amount") +": "+ heal + TextFormatting.GREEN + " +" + 1.0);
+								else
+									list.add(I18n.format("levels.abilities.info.heal_amount") +": "+ heal);
 							}
 							if(!(Ability.REMEDIAL.canUpgradeLevel(nbt)) && (!(buttons[i].enabled)))
 									list.add(TextFormatting.RED + I18n.format("levels.misc.max")+" " + I18n.format("levels.misc.level"));
