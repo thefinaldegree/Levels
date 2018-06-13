@@ -1,0 +1,67 @@
+key.weaponlevels=Weapon Levels
+key.gui.weapon_interface=Eşyaya Yetenek Verme Tuşu
+
+weaponlevels.rarity.DEFAULT=Default
+weaponlevels.rarity.BASIC=Temel
+weaponlevels.rarity.UNCOMMON=Sıradışı
+weaponlevels.rarity.RARE=Nadir
+weaponlevels.rarity.ULTRA_RARE=Çok Nadir
+weaponlevels.rarity.LEGENDARY=Efsanevi
+weaponlevels.rarity.ARCHAIC=Arkaik
+
+weaponlevels.ability.FIRE=Yakma
+weaponlevels.ability.FROST=Dondurma
+weaponlevels.ability.POISON=Zehirleme
+weaponlevels.ability.INNATE=Kanama
+weaponlevels.ability.BOMBASTIC=Patlatıcı
+weaponlevels.ability.VOID=Void
+weaponlevels.ability.ILLUMINATION=Ayartma
+weaponlevels.ability.ETHEREAL=Etetik
+weaponlevels.ability.BLOODTHIRST=Kanasusamış
+weaponlevels.ability.MOLTEN=Eriyik
+weaponlevels.ability.FROZEN=Donmuş
+weaponlevels.ability.TOXIC=Zehirli
+weaponlevels.ability.ABSORB=Emici
+weaponlevels.ability.BEASTIAL=Son Hiddet
+weaponlevels.ability.REMEDIAL=Metanet
+weaponlevels.ability.HARDENED=Hardened
+
+weaponlevels.ability.type.active=Aktif
+weaponlevels.ability.type.passive=Pasif
+
+weaponlevels.abilities.info.FIRE=Hedefi kısa süreliğine yakar.
+weaponlevels.abilities.info.FROST=Hedefi dondurur ve hareket etmesini kısa bir süreliğine engeller.
+weaponlevels.abilities.info.POISON=Hedefi kısa süreliğine zehirler.
+weaponlevels.abilities.info.INNATE=Hedefin kan kaybetmesini sağlayan bir yara açar.
+weaponlevels.abilities.info.BOMBASTIC=Hedefi patlatır. Yakındaysanız size de zarar verebilir.
+weaponlevels.abilities.info.VOID=Düşük bir ihtimalle; hedefe verdiğiniz hasar hedefin canının yüzdesine göre fazlaca bir miktarda artar.
+weaponlevels.abilities.info.ILLUMINATION=Hedefi güçsüzleştirir.
+weaponlevels.abilities.info.ETHEREAL=Hedefi öldürdüğünüzde silahınız onarılır.
+weaponlevels.abilities.info.BLOODTHIRST=Hasar verdikçe iyileşirsiniz.
+weaponlevels.abilities.info.MOLTEN=Size vuran hedefleri yakar.
+weaponlevels.abilities.info.FROZEN=Size vuran hedefleri dondurur.
+weaponlevels.abilities.info.TOXIC=Size vuran hedefleri zehirler.
+weaponlevels.abilities.info.ABSORB=Kısa bir süreliğine hızlı can yenilersiniz.
+weaponlevels.abilities.info.BEASTIAL=Ölecek kadar canınız azaldığında kuvvetlendirme etkisi kazanırsınız.
+weaponlevels.abilities.info.REMEDIAL=Zırhınız canınızı her 6 saniyede bir yeniler.
+weaponlevels.abilities.info.HARDENED=Size verilen tüm hasarın tamamının yoksayılması için bir şans.
+weaponlevels.abilities.info.duration=Süre
+weaponlevels.abilities.info.chance=Şans
+weaponlevels.abilities.info.count=Miktar
+weaponlevels.abilities.info.bleedingspeed=Kanama Hızı
+weaponlevels.abilities.info.explosionintensity=Patlama Şiddeti
+weaponlevels.abilities.info.damagepercentage=Yüzdelik Hasar
+weaponlevels.abilities.info.durability=Onarım
+weaponlevels.abilities.info.seconds=saniye
+weaponlevels.abilities.info.heal_amount=İyileştirme Miktarı
+
+weaponlevels.misc.level=Level
+weaponlevels.misc.max=Maks
+weaponlevels.misc.experience=Tecrübe
+weaponlevels.misc.durability=Sağlamlık
+weaponlevels.misc.abilities=Yetenekler
+weaponlevels.misc.abilities.shift=Yetenekler (Shift)
+weaponlevels.misc.rarity=Enderlik
+weaponlevels.misc.tier=Rütbe
+weaponlevels.misc.abilities.tokens=Yetenek Puanı
+weaponlevels.misc.abilities.purchased=Edinilmiş Yetenekler
