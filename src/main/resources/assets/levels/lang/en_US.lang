@@ -51,7 +51,7 @@ weaponlevels.abilities.info.count=Count
 weaponlevels.abilities.info.bleedingspeed=Bleeding Speed
 weaponlevels.abilities.info.explosionintensity=Explosion Intensity
 weaponlevels.abilities.info.damagepercentage=Damage Percentage
-weaponlevels.abilities.info.durability=Durability
+weaponlevels.abilities.info.durability=Repair Amount
 weaponlevels.abilities.info.seconds=seconds
 weaponlevels.abilities.info.heal_amount=Heal Amount
 
@@ -65,9 +65,3 @@ weaponlevels.misc.rarity=Rarity
 weaponlevels.misc.tier=Tier
 weaponlevels.misc.abilities.tokens=Ability Tokens
 weaponlevels.misc.abilities.purchased=Purchased Abilities
-weaponlevels.misc.abilities.active=Active
-weaponlevels.misc.abilities.passive=Passive
-
-weaponlevels.update=Weapon Levels has a new versions available!
-weaponlevels.login1=Press 'L' with a weapon/armor in hand to get started!
-weaponlevels.login2=(You can disable this message in the config)

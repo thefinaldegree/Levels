@@ -202,8 +202,8 @@ public class GuiAbilitySelection extends GuiScreen
 		drawCenteredString(fontRenderer, I18n.format("weaponlevels.misc.abilities"), width / 3, 80, 0xFFFFFF);
 		drawCenteredString(fontRenderer, I18n.format("weaponlevels.misc.abilities.tokens") + ": " + Experience.getAbilityTokens(nbt), width / 2 - 112, 230, 0xFFFFFF);
 		drawCenteredString(fontRenderer, I18n.format("weaponlevels.misc.abilities.purchased"), width / 2 + 112, 100, 0xFFFFFF);
-		drawCenteredString(fontRenderer, I18n.format("weaponlevels.misc.abilities.active"), width / 2 + 75, 120, 0xFFFFFF);
-		drawCenteredString(fontRenderer, I18n.format("weaponlevels.misc.abilities.passive"), width / 2 + 150, 120, 0xFFFFFF);
+		drawCenteredString(fontRenderer, I18n.format("weaponlevels.ability.type.active"), width / 2 + 75, 120, 0xFFFFFF);
+		drawCenteredString(fontRenderer, I18n.format("weaponlevels.ability.type.passive"), width / 2 + 150, 120, 0xFFFFFF);
 		
 		if (Experience.getLevel(nbt) == Config.maxLevel)
 		{
