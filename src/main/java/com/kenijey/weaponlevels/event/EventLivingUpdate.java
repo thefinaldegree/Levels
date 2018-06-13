@@ -3,6 +3,7 @@ package com.kenijey.weaponlevels.event;
 import java.util.Random;
 
 import com.kenijey.weaponlevels.config.Config;
+import com.kenijey.weaponlevels.leveling.Ability;
 import com.kenijey.weaponlevels.leveling.Experience;
 import com.kenijey.weaponlevels.leveling.Rarity;
 import com.kenijey.weaponlevels.util.NBTHelper;
@@ -27,6 +28,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  */
 public class EventLivingUpdate 
 {
+	private int count=0;
 	@SubscribeEvent
 	public void onUpdate(LivingEvent.LivingUpdateEvent event)
 	{
@@ -40,6 +42,24 @@ public class EventLivingUpdate
 				
 				if (!player.world.isRemote)
 				{
+					for (ItemStack stck : player.inventory.armorInventory)
+					{
+						if (stck != null && stck.getItem() instanceof ItemArmor)
+						{
+							NBTTagCompound nbtcompound = stck.getTagCompound();
+							float heal=Ability.REMEDIAL.getLevel(nbtcompound);
+							if (Ability.REMEDIAL.hasAbility(nbtcompound))
+								if(this.count < 120)
+								{
+									this.count++;
+								}
+								else
+								{
+									this.count = 0;
+									player.heal(heal);
+								}
+						}
+					}
 					for (int i = 0; i < main.size(); i++)
 					{
 						if (main.get(i) != null)
