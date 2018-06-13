@@ -725,6 +725,7 @@ public class GuiAbilitySelection extends GuiScreen
 							{
 								if (buttons[i].enabled)
 								{
+									heal=1f;
 									list.add(I18n.format("weaponlevels.abilities.info.heal_amount") + ": 0 " + TextFormatting.GREEN + "+" + heal);
 								}
 							}
