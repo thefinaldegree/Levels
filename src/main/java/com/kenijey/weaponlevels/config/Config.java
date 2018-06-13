@@ -292,17 +292,17 @@ public class Config
 		propOrder.add(prop.getName());
 		
 		prop = abilitychances.get(category, "innatechance", innatechance);
-		prop.setComment("Determines how rare the Innate ability will occur. (Higher values=lower occurance) Default: 7");
+		prop.setComment("Determines how rare the Innate ability will occur. (Higher values=lower occurance) Default: 6");
 		innatechance = prop.getInt();
 		propOrder.add(prop.getName());
 		
 		prop = abilitychances.get(category, "bombasticchance", bombasticchance);
-		prop.setComment("Determines how rare the Bombastic ability will occur. (Higher values=lower occurance) Default: 10");
+		prop.setComment("Determines how rare the Bombastic ability will occur. (Higher values=lower occurance) Default: 7");
 		bombasticchance = prop.getInt();
 		propOrder.add(prop.getName());
 		
 		prop = abilitychances.get(category, "voidachance", voidachance);
-		prop.setComment("Determines how rare the Void ability will occur. (Higher values=lower occurance) Default: 20");
+		prop.setComment("Determines how rare the Void ability will occur. (Higher values=lower occurance) Default: 13");
 		voidachance = prop.getInt();
 		propOrder.add(prop.getName());
 		
@@ -404,7 +404,7 @@ public class Config
 		propOrder.add(prop.getName());
 		
 		prop = rarities.get(category, "archaicDamage", archaicDamage);
-		prop.setComment("Sets the damage multiplier for the given rarity. Default: 2");
+		prop.setComment("Sets the damage multiplier for the given rarity. Default: 2.0");
 		archaicDamage = prop.getDouble();
 		propOrder.add(prop.getName());
 		
