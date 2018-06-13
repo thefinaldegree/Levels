@@ -68,9 +68,9 @@ public class Config
 	public static int firechance = 4;
 	public static int frostchance = 4;
 	public static int poisonchance = 4;
-	public static int innatechance = 7;
-	public static int bombasticchance = 10;
-	public static int voidachance = 20;
+	public static int innatechance = 6;
+	public static int bombasticchance = 7;
+	public static int voidachance = 13;
 	//armor
 	public static int moltenchance = 4;
 	public static int frozenchance = 4;
