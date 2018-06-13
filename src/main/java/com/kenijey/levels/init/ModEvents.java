@@ -1,7 +1,6 @@
 package com.kenijey.levels.init;
 
 import com.kenijey.levels.config.Config;
-import com.kenijey.levels.event.EventAchievement;
 import com.kenijey.levels.event.EventInput;
 import com.kenijey.levels.event.EventItemTooltip;
 import com.kenijey.levels.event.EventLivingDeath;
@@ -25,7 +24,6 @@ public class ModEvents
 		MinecraftForge.EVENT_BUS.register(new EventInput());
 		MinecraftForge.EVENT_BUS.register(new EventLivingHurt());
 		MinecraftForge.EVENT_BUS.register(new EventLivingDeath());
-		MinecraftForge.EVENT_BUS.register(new EventAchievement());
 		
 		if (Config.enemyLeveling)
 		{
