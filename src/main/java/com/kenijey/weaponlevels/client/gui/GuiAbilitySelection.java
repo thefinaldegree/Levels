@@ -207,8 +207,8 @@ public class GuiAbilitySelection extends GuiScreen
 		
 		if (Experience.getLevel(nbt) == Config.maxLevel)
 		{
-			drawString(fontRenderer, I18n.format("weaponlevels.misc.level") + ": " + I18n.format("weaponlevels.misc.max"), width / 2 - 50, 50, 0xFFFFFF);
-			drawString(fontRenderer, I18n.format("weaponlevels.misc.experience") + ": " + I18n.format("weaponlevels.misc.max"), width / 2 - 50, 60, 0xFFFFFF);
+			drawString(fontRenderer, I18n.format("weaponlevels.misc.level") + ": " + Experience.getLevel(nbt) + TextFormatting.DARK_RED +" (" + I18n.format("weaponlevels.misc.max") + ")", width / 2 - 50, 50, 0xFFFFFF);
+			drawString(fontRenderer, I18n.format("weaponlevels.misc.experience") + ": " + Experience.getExperience(nbt), width / 2 - 50, 60, 0xFFFFFF);
 		}
 		else
 		{
