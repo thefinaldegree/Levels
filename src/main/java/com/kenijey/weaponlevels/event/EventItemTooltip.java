@@ -70,7 +70,7 @@ public class EventItemTooltip
 					// add tooltips
 					// formatting
 					tooltip.add("");
-					tooltip.add(rarity.getColor() + "===============");
+					tooltip.add(rarity.getColor() + "---------------");
 					tooltip.add("");
 					
 					// rarity
@@ -127,7 +127,7 @@ public class EventItemTooltip
 					
 					// formatting
 					tooltip.add("");
-					tooltip.add(rarity.getColor() + "===============");
+					tooltip.add(rarity.getColor() + "---------------");
 					tooltip.add("");
 				}
 			}
